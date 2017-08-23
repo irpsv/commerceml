@@ -16,7 +16,7 @@ class Psr4AutoloaderClass
         if (isset($this->prefixes[$prefix]) === false) {
             $this->prefixes[$prefix] = array();
         }
-        
+
         if ($prepend) {
             array_unshift($this->prefixes[$prefix], $base_dir);
         } else {
@@ -68,5 +68,5 @@ class Psr4AutoloaderClass
 
 $loader = new Psr4AutoloaderClass();
 $loader->addNamespace('tests', __DIR__.'/../tests');
-$loader->addNamespace('your_namescape', __DIR__.'/../src');
+$loader->addNamespace('irpsv\commerceml', __DIR__.'/../src');
 $loader->register();
