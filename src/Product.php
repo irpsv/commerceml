@@ -1,5 +1,7 @@
 <?php
 
+namespace irpsv\commerceml;
+
 class Product
 {
 	protected $id;

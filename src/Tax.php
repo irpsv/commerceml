@@ -1,5 +1,7 @@
 <?php
 
+namespace irpsv\commerceml;
+
 class Tax
 {
 	protected $name;

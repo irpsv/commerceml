@@ -1,5 +1,7 @@
 <?php
 
+namespace irpsv\commerceml;
+
 class Contact
 {
 	const TYPE_PHONE_INTERNAL = "Телефон внутренний";

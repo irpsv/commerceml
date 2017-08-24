@@ -1,5 +1,7 @@
 <?php
 
+namespace irpsv\commerceml;
+
 class Address
 {
 	protected $performance; // представление

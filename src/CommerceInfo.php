@@ -1,6 +1,6 @@
 <?php
 
-namespace irpsv\commerceml\docs;
+namespace irpsv\commerceml;
 
 class CommerceInfo
 {

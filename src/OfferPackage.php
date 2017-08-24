@@ -1,5 +1,7 @@
 <?php
 
+namespace irpsv\commerceml;
+
 /**
  * Пакет предложений
  */

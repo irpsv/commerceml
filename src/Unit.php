@@ -1,5 +1,7 @@
 <?php
 
+namespace irpsv\commerceml;
+
 /**
  * Единица измерения
  */

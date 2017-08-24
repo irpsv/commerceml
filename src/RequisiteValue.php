@@ -1,5 +1,7 @@
 <?php
 
+namespace irpsv\commerceml;
+
 class RequisiteValue
 {
 	protected $name;

@@ -1,5 +1,7 @@
 <?php
 
+namespace irpsv\commerceml;
+
 class AddressField
 {
 	const TYPE_INDEX = "Почтовый индекс";

@@ -1,6 +1,6 @@
 <?php
 
-namespace irpsv\commerceml\types;
+namespace irpsv\commerceml;
 
 class Contragent
 {
@@ -8,7 +8,7 @@ class Contragent
 	protected $name;
 	protected $comment;
 	protected $address;
-	protected $contactInfo;
+	protected $contacts = []; // контакты
 	protected $representatives = [];
 	protected $requisitiesIndividual;
 	protected $requisitiesOrganisation;
@@ -53,14 +53,14 @@ class Contragent
 		return $this->Address;
 	}
 
-	public function setContactInfo(ContactInfo $value)
+	public function addContact(Contact $value)
 	{
-		$this->contactInfo = $value;
+		$this->contacts[] = $value;
 	}
 
-	public function getContactInfo(): ?ContactInfo
+	public function getContacts(): array
 	{
-		return $this->contactInfo;
+		return $this->contacts;
 	}
 
 	public function addRepresentatives(Representative $value)

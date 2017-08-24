@@ -1,5 +1,7 @@
 <?php
 
+namespace irpsv\commerceml;
+
 class PriceType
 {
 	protected $id;

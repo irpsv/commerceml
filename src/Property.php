@@ -1,5 +1,7 @@
 <?php
 
+namespace irpsv\commerceml;
+
 class Property
 {
 	const TYPE_TIME = "Время";

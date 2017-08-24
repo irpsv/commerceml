@@ -1,5 +1,7 @@
 <?php
 
+namespace irpsv\commerceml;
+
 class Offer extends Product
 {
 	protected $prices;
