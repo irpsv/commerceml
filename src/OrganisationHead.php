@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class OrganisationHead
+class OrganisationHead extends Model
 {
 	use HumanInfoTrait;
 

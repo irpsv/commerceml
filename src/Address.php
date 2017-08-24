@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class Address
+class Address extends Model
 {
 	protected $performance; // представление
 	protected $comment;

@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class Property
+class Property extends Model
 {
 	const TYPE_TIME = "Время";
 	const TYPE_NUMBER = "Число";
@@ -111,7 +111,7 @@ class Property
 		return $this->valueType;
 	}
 
-	public function addValues(string $value)
+	public function addValue(string $value)
 	{
 		$this->values[] = $value;
 	}

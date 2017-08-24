@@ -2,13 +2,33 @@
 
 namespace irpsv\commerceml;
 
-class CommerceInfo
+class CommerceInfo extends Model
 {
-	public $version;
-	public $datetime;
+	protected $version;
+	protected $datetime;
 	protected $catalog;
 	protected $classifier;
 	protected $offerPackage;
+
+	public function setVersion(string $value)
+	{
+		$this->version = $value;
+	}
+
+	public function getVersion(): ?string
+	{
+		return $this->version;
+	}
+
+	public function setDatetime(\DateTime $value)
+	{
+		$this->datetime = $value;
+	}
+
+	public function getDatetime(): ?\DateTime
+	{
+		return $this->datetime;
+	}
 
 	public function setCatalog(Catalog $value)
 	{

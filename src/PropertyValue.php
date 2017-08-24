@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class PropertyValue
+class PropertyValue extends Model
 {
 	protected $id;
 	protected $name;

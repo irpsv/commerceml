@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class AddressField
+class AddressField extends Model
 {
 	const TYPE_INDEX = "Почтовый индекс";
 	const TYPE_COUNTRY = "Страна";

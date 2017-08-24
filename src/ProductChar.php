@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class ProductChar
+class ProductChar extends Model
 {
 	protected $id;
 	protected $name;

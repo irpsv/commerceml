@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class Vendor
+class Vendor extends Model
 {
 	protected $country;
 	protected $brandName;

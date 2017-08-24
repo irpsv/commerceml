@@ -1,6 +1,8 @@
 <?php
 
-class Store
+namespace irpsv\commerceml;
+
+class Store extends Model
 {
 	protected $id;
 	protected $name;

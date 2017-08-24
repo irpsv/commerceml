@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class RequisiteValue
+class RequisiteValue extends Model
 {
 	protected $name;
 	protected $value;

@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class Excise
+class Excise extends Model
 {
 	protected $name;
 	protected $amountPerOne;

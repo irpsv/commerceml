@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class StoreCount
+class StoreCount extends Model
 {
 	protected $storeId;
 	protected $count;

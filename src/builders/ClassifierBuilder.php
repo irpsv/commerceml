@@ -1,12 +1,9 @@
 <?php
 
-namespace irpsv\commerceml\docs\builders;
+namespace irpsv\commerceml\builders;
 
-use irpsv\commerceml\docs\Classifier;
-use irpsv\commerceml\types\builders\GroupBuilder;
-use irpsv\commerceml\types\builders\ContragentBuilder;
-use irpsv\commerceml\types\builders\PropertyBuilder;
-use irpsv\commerceml\types\builders\PriceTypeBuilder;
+use irpsv\commerceml\Classifier;
+use irpsv\commerceml\helpers\DocumentHelper;
 
 class ClassifierBuilder
 {
@@ -17,43 +14,64 @@ class ClassifierBuilder
 		$this->element = $element;
 	}
 
-	public function build(): Classifier
+	public function build(): ?Classifier
 	{
 		$ret = new Classifier();
-		$ret->id = $this->element->getElementsByTagName("Ид")->item(0)->nodeValue;
-		$ret->name = $this->element->getElementsByTagName("Наименование")->item(0)->nodeValue;
 
-		$node = $this->element->getElementsByTagName("Владелец")->item(0);
-		$ret->setOwner(
-			(new ContragentBuilder($node))->build()
-		);
-
-		$node = $this->element->getElementsByTagName("Описание")->item(0);
-		if ($node) {
-			$ret->desc = $node->nodeValue;
+		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Ид");
+		if ($value) {
+			$ret->setId($value->nodeValue);
 		}
 
-		$nodes = $this->element->getElementsByTagName("Группы");
-		foreach ($nodes as $node) {
-			$ret->addGroup(
-				(new GroupBuilder($node))->build()
+		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Наименование");
+		if ($value) {
+			$ret->setName($value->nodeValue);
+		}
+
+		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Владелец");
+		if ($value) {
+			$ret->setOwner(
+				(new ContragentBuilder($value))->build()
 			);
 		}
 
-		$nodes = $this->element->getElementsByTagName("Свойства");
-		foreach ($nodes as $node) {
-			$ret->addProperty(
-				(new PropertyBuilder($node))->build()
-			);
+		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Описание");
+		if ($value) {
+			$ret->setDesc($value->nodeValue);
 		}
 
-		$nodes = $this->element->getElementsByTagName("ТипыЦен");
-		foreach ($nodes as $node) {
-			$ret->addPriceType(
-				(new PriceTypeBuilder($node))->build()
-			);
+		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Группы");
+		if ($value) {
+			foreach ($value->getElementsByTagName("Группа") as $item) {
+				$ret->addGroup(
+					(new GroupBuilder($item))->build()
+				);
+			}
 		}
 
-		return $ret;
+		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Свойства");
+		if ($value) {
+			foreach ($value->getElementsByTagName("Свойство") as $item) {
+				$ret->addProperty(
+					(new PropertyBuilder($item))->build()
+				);
+			}
+		}
+
+		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "ТипыЦен");
+		if ($value) {
+			foreach ($value->getElementsByTagName("ТипЦены") as $item) {
+				$ret->addPriceType(
+					(new PriceTypeBuilder($item))->build()
+				);
+			}
+		}
+
+		if ($ret->isEmpty()) {
+			return null;
+		}
+		else {
+			return $ret;
+		}
 	}
 }

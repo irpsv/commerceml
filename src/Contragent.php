@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class Contragent
+class Contragent extends Model
 {
 	protected $id;
 	protected $name;
@@ -15,42 +15,42 @@ class Contragent
 
 	public function setId(string $value)
 	{
-		$this->Id = $value;
+		$this->id = $value;
 	}
 
 	public function getId(): string
 	{
-		return $this->Id;
+		return $this->id;
 	}
 
 	public function setName(string $value)
 	{
-		$this->Name = $value;
+		$this->name = $value;
 	}
 
 	public function getName(): string
 	{
-		return $this->Name;
+		return $this->name;
 	}
 
 	public function setComment(string $value)
 	{
-		$this->Comment = $value;
+		$this->comment = $value;
 	}
 
 	public function getComment(): ?string
 	{
-		return $this->Comment;
+		return $this->comment;
 	}
 
 	public function setAddress(Address $value)
 	{
-		$this->Address = $value;
+		$this->address = $value;
 	}
 
 	public function getAddress(): ?Address
 	{
-		return $this->Address;
+		return $this->address;
 	}
 
 	public function addContact(Contact $value)

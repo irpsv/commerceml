@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class BaseScale
+class BaseScale extends Model
 {
 	protected $code;
 	protected $name;

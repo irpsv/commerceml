@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class TaxRate
+class TaxRate extends Model
 {
 	protected $name;
 	protected $rate;

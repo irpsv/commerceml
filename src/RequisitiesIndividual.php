@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class RequisitiesIndividual
+class RequisitiesIndividual extends Model
 {
 	use HumanInfoTrait;
 

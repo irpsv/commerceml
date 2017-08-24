@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class WorkPlace
+class WorkPlace extends Model
 {
 	protected $organisation;
 	protected $post; // должность

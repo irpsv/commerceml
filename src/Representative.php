@@ -5,7 +5,7 @@ namespace irpsv\commerceml;
 /**
  * Представитель
  */
-class Representative
+class Representative extends Model
 {
 	protected $id;
 	protected $name;

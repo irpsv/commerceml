@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class Bank
+class Bank extends Model
 {
 	protected $scor; // счет корреспондентский
 	protected $name;

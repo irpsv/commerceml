@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class Passport
+class Passport extends Model
 {
 	protected $type;
 	protected $series;

@@ -1,55 +1,60 @@
 <?php
 
-namespace irpsv\commerceml\docs\builders;
+namespace irpsv\commerceml\builders;
 
-use irpsv\commerceml\docs\CommerceInfo;
+use irpsv\commerceml\CommerceInfo;
+use irpsv\commerceml\helpers\DocumentHelper;
 
 class CommerceInfoBuilder
 {
-	protected $element;
+	protected $document;
 
-	public function __construct(\DOMElement $element)
+	public function __construct(\DOMDocument $document)
 	{
-		$this->element = $element;
+		$this->document = $document;
 	}
 
-	public function build(): CommerceInfo
+	public function build(): ?CommerceInfo
 	{
-		$doc = new CommerceInfo();
-		$doc->version = $this->element->getAttribute("ВерсияСхемы");
-		$doc->datetime = new \DateTime($this->element->getAttribute("ДатаФормирования"));
+		$element = $this->document->getElementsByTagName('КоммерческаяИнформация')->item(0);
+		if (!$element) {
+			throw new \Exception("Root tag 'КоммерческаяИнформация' not found");
+		}
 
-		$value = $this->element->getElementsByTagName("Классификатор")->item(0);
+		$ret = new CommerceInfo();
+		$ret->setVersion(
+			$element->getAttribute("ВерсияСхемы")
+		);
+		$ret->setDatetime(
+			new \DateTime($element->getAttribute("ДатаФормирования"))
+		);
+
+		$value = $element->getElementsByTagName("Классификатор")->item(0);
 		if ($value) {
-			$doc->setClassifier(
+			$ret->setClassifier(
 				(new ClassifierBuilder($value))->build()
 			);
 		}
 
-		$value = $this->element->getElementsByTagName("Каталог")->item(0);
+		$value = $element->getElementsByTagName("Каталог")->item(0);
 		if ($value) {
-			$doc->setCatalog(
+			$ret->setCatalog(
 				(new CatalogBuilder($value))->build()
 			);
 		}
 
-		$value = $this->element->getElementsByTagName("ПакетПредложений")->item(0);
+		$value = $element->getElementsByTagName("ПакетПредложений")->item(0);
 		if ($value) {
-			$doc->setOfferPackage(
+			$ret->setOfferPackage(
 				(new OfferPackageBuilder($value))->build()
 			);
 		}
 
-		$value = $this->element->getElementsByTagName("Документ")->item(0);
-		if ($value) {
-			throw new \Exception("Type of 'Документ' is coming soon");
+		if ($ret->isEmpty()) {
+			return null;
 		}
-
-		$value = $this->element->getElementsByTagName("ИзмененияПакетаПредложений")->item(0);
-		if ($value) {
-			throw new \Exception("Type of 'ИзмененияПакетаПредложений' is coming soon");
+		else {
+			return $ret;
 		}
-
-		return $doc;
 	}
 }

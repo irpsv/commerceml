@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class RequisitiesOrganisation
+class RequisitiesOrganisation extends Model
 {
 	protected $name;
 	protected $address;

@@ -5,7 +5,7 @@ namespace irpsv\commerceml;
 /**
  * Пакет предложений
  */
-class OfferPackage
+class OfferPackage extends Model
 {
 	protected $id;
 	protected $name;

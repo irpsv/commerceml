@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class Catalog
+class Catalog extends Model
 {
 	protected $id;
 	protected $classifierId;

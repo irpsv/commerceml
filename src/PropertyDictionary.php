@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class PropertyDictionary
+class PropertyDictionary extends Model
 {
 	protected $valueId;
 	protected $value;

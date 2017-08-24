@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class PriceType
+class PriceType extends Model
 {
 	protected $id;
 	protected $name;

@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class Tax
+class Tax extends Model
 {
 	protected $name;
 	protected $isAccounted; // учтено в сумме?

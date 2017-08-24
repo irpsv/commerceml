@@ -2,7 +2,7 @@
 
 namespace irpsv\commerceml;
 
-class Contact
+class Contact extends Model
 {
 	const TYPE_PHONE_INTERNAL = "Телефон внутренний";
 	const TYPE_PHONE_WORK = "Телефон рабочий";

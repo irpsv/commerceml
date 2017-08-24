@@ -7,7 +7,7 @@ use irpsv\commerceml\Property;
 use irpsv\commerceml\PriceType;
 use irpsv\commerceml\Contragent;
 
-class Classifier
+class Classifier extends Model
 {
 	protected $id;
 	protected $name;

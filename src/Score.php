@@ -2,12 +2,22 @@
 
 namespace irpsv\commerceml;
 
-class Score
+class Score extends Model
 {
 	protected $number;
 	protected $bank;
 	protected $bankCorrespondent;
 	protected $comment;
+
+	public function setNumber(string $value)
+	{
+		$this->number = $value;
+	}
+
+	public function getNumber(): ?string
+	{
+		return $this->number;
+	}
 
 	public function setBank(Bank $value)
 	{

@@ -5,7 +5,7 @@ namespace irpsv\commerceml;
 /**
  * Единица измерения
  */
-class Unit
+class Unit extends Model
 {
 	protected $name; // Имя единицы измерения товара по ОКЕИ.
 	protected $coeff;
