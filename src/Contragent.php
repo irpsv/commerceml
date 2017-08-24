@@ -75,16 +75,18 @@ class Contragent
 
 	public function setRequisitiesIndividual(RequisitiesIndividual $value)
 	{
-		$this->RequisitiesIndividual = $value;
+		$this->requisitiesIndividual = $value;
+		$this->requisitiesOrganisation = null;
 	}
 
 	public function getRequisitiesIndividual(): ?RequisitiesIndividual
 	{
-		return $this->RequisitiesIndividual;
+		return $this->requisitiesIndividual;
 	}
 
 	public function setRequisitiesOrganisation(RequisitiesOrganisation $value)
 	{
+		$this->requisitiesIndividual = null;
 		$this->requisitiesOrganisation = $value;
 	}
 
