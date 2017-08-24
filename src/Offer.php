@@ -4,7 +4,7 @@ class Offer extends Product
 {
 	protected $prices;
 	protected $count;
-	protected $storeCounts = [];
+	protected $storeCounts = []; // остаткиПоСкладам
 
 	public function addPrice(Price $value)
 	{
