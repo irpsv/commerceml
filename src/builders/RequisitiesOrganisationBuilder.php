@@ -93,7 +93,7 @@ class RequisitiesOrganisationBuilder
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "РасчетныеСчета");
 		if ($value) {
-			foreach ($value->getElementsByTagName("РасчетныйСчет") as $item) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "РасчетныйСчет") as $item) {
 				$score = (new ScoreBuilder($item))->build();
 				if ($score) {
 					$ret->addScore($score);

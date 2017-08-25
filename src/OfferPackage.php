@@ -19,6 +19,7 @@ class OfferPackage extends Model
 	protected $stores = [];
 	protected $propertyValues = [];
 	protected $offers = [];
+	protected $isOnlyChanges;
 
 	public function setId(string $value)
 	{
@@ -138,5 +139,15 @@ class OfferPackage extends Model
 	public function getOffers(): array
 	{
 		return $this->offers;
+	}
+
+	public function setIsOnlyChanges(bool $value)
+	{
+		$this->isOnlyChanges = $value;
+	}
+
+	public function getIsOnlyChanges(): ?bool
+	{
+		return $this->isOnlyChanges;
 	}
 }

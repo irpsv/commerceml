@@ -63,7 +63,7 @@ class Contragent extends Model
 		return $this->contacts;
 	}
 
-	public function addRepresentatives(Representative $value)
+	public function addRepresentative(Representative $value)
 	{
 		$this->representatives[] = $value;
 	}

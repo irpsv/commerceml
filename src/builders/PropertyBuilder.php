@@ -65,10 +65,10 @@ class PropertyBuilder
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "ВариантыЗначений");
 		if ($value) {
-			foreach ($value->getElementsByTagName("Значение") as $item) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "Значение") as $item) {
 				$ret->addValue($value->nodeValue);
 			}
-			foreach ($value->getElementsByTagName("Справочник") as $item) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "Справочник") as $item) {
 				$ret->addDictionary(
 					(new PropertyDictionaryBuilder($item))->build()
 				);

@@ -16,7 +16,7 @@ class OfferBuilder
 
 	public function build(): ?Offer
 	{
-		$offer = Offer::createFromProduct(
+		$ret = Offer::createFrom(
 			(new ProductBuilder($this->element))->build()
 		);
 
@@ -27,7 +27,7 @@ class OfferBuilder
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Цены");
 		if ($value) {
-			foreach ($value->getElementsByTagName("Цена") as $item) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "Цена") as $item) {
 				$ret->addPrice(
 					(new PriceBuilder($item))->build()
 				);
@@ -36,7 +36,7 @@ class OfferBuilder
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Склад");
 		if ($value) {
-			foreach ($value->getElementsByTagName("ОстаткиПоСкладам") as $item) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "ОстаткиПоСкладам") as $item) {
 				$ret->addStoreCount(
 					(new StoreCountBuilder($item))->build()
 				);

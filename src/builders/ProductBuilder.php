@@ -3,6 +3,7 @@
 namespace irpsv\commerceml\builders;
 
 use irpsv\commerceml\Product;
+use irpsv\commerceml\Picture;
 use irpsv\commerceml\helpers\DocumentHelper;
 
 class ProductBuilder
@@ -25,76 +26,120 @@ class ProductBuilder
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Штрихкод");
 		if ($value) {
-			$ret->setId($value->nodeValue);
+			$ret->setBarcode($value->nodeValue);
 		}
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Артикул");
 		if ($value) {
-			$ret->setId($value->nodeValue);
+			$ret->setArticul($value->nodeValue);
 		}
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Наименование");
 		if ($value) {
 			$ret->setName($value->nodeValue);
 		}
-		//
-		// $value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "БазоваяЕдиница");
-		// if ($value) {
-		// 	$ret->setBaseScale(
-		// 		(new BaseScaleBuilder($value))->build()
-		// 	);
-		// }
 
-		// $value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Группы");
-		// if ($value) {
-		// 	foreach ($value->getElementsByTagName("Ид") as $item) {
-		// 		$ret->addGroupId($item->nodeValue);
-		// 	}
-		// }
-		//
-		// $value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Описание");
-		// if ($value) {
-		// 	$ret->setDesc($value->nodeValue);
-		// }
-		//
-		// $value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Картинка");
-		// if ($value) {
-		// 	$ret->setDesc(
-		// 		new Picture($value->nodeValue)
-		// 	);
-		// }
+		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "БазоваяЕдиница");
+		if ($value) {
+			$ret->setBaseScale(
+				(new BaseScaleBuilder($value))->build()
+			);
+		}
+
+		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Группы");
+		if ($value) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "Ид") as $item) {
+				$ret->addGroupId($item->nodeValue);
+			}
+		}
+
+		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Описание");
+		if ($value) {
+			$ret->setDesc($value->nodeValue);
+		}
+
+		$value = DocumentHelper::findFirstLevelChildsByTagName($this->element, "Картинка");
+		foreach ($value as $item) {
+			if ($item->nodeValue) {
+				$ret->addPicture(
+					new Picture($item->nodeValue)
+				);
+			}
+		}
+
 		//
 		// $vendor = (new VendorBuilder($this->element))->build();
 		// if ($vendor) {
 		// 	$ret->setVendor($vendor);
 		// }
-		//
-		// $value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "ЗначенияСвойств");
-		// if ($value) {
-		// 	foreach ($value->getElementsByTagName("ЗначенияСвойства") as $item) {
-		// 		$ret->addPropertyValue(
-		// 			(new PropertyValueBuilder($item))->build()
-		// 		);
-		// 	}
-		// }
-		//
-		// $value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "СтавкиНалогов");
-		// if ($value) {
-		// 	foreach ($value->getElementsByTagName("СтавкаНалога") as $item) {
-		// 		$ret->addTaxRate(
-		// 			(new TaxRateBuilder($item))->build()
-		// 		);
-		// 	}
-		// }
-		//
+
+		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "ЗначенияСвойств");
+		if ($value) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "ЗначенияСвойства") as $item) {
+				$ret->addPropertyValue(
+					(new PropertyValueBuilder($item))->build()
+				);
+			}
+		}
+
+		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "СтавкиНалогов");
+		if ($value) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "СтавкаНалога") as $item) {
+				$tax = (new TaxRateBuilder($item))->build();
+				if ($tax) {
+					$ret->addTaxRate($tax);
+				}
+			}
+		}
+
 		// $value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Акцизы");
 		// if ($value) {
-		// 	foreach ($value->getElementsByTagName("Акциз") as $item) {
+		// 	foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "Акциз") as $item) {
 		// 		$ret->addExcise(
 		// 			(new ExciseBuilder($item))->build()
 		// 		);
 		// 	}
 		// }
+
+		// $value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Комплектующие");
+		// if ($value) {
+		// 	foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "Комплектующее") as $item) {
+		// 		$tax = (new AccessoryBuilder($item))->build();
+		// 		if ($tax) {
+		// 			$ret->addAccessory($tax);
+		// 		}
+		// 	}
+		// }
+		//
+		// $value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Аналоги");
+		// if ($value) {
+		// 	foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "Аналог") as $item) {
+		// 		$tax = (new AnalogBuilder($item))->build();
+		// 		if ($tax) {
+		// 			$ret->addAnalog($tax);
+		// 		}
+		// 	}
+		// }
+
+		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "ХарактеристикиТовара");
+		if ($value) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "ХарактеристикаТовара") as $item) {
+				$x = (new ProductCharBuilder($item))->build();
+				if ($x) {
+					$ret->addProductChar($x);
+				}
+			}
+		}
+
+		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "ЗначенияРеквизитов");
+		if ($value) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "ЗначениеРеквизита") as $item) {
+				$x = (new RequisiteValueBuilder($item))->build();
+				if ($x) {
+					$ret->addRequisiteValue($x);
+				}
+			}
+		}
 
 		if ($ret->isEmpty()) {
 			return null;

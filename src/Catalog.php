@@ -7,9 +7,10 @@ class Catalog extends Model
 	protected $id;
 	protected $classifierId;
 	protected $name;
+	protected $desc;
 	protected $owner;
 	protected $products = [];
-	protected $desc;
+	protected $isOnlyChanges;
 
 	public function setId(string $value)
 	{
@@ -69,5 +70,15 @@ class Catalog extends Model
 	public function getDesc(): ?string
 	{
 		return $this->desc;
+	}
+
+	public function setIsOnlyChanges(bool $value)
+	{
+		$this->isOnlyChanges = $value;
+	}
+
+	public function getIsOnlyChanges(): ?bool
+	{
+		return $this->isOnlyChanges;
 	}
 }

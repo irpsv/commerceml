@@ -35,7 +35,7 @@ class GroupBuilder
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Группы");
 		if ($value) {
-			foreach ($value->getElementsByTagName("Группа") as $group) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "Группа") as $group) {
 				$ret->addGroup(
 					(new GroupBuilder($group))->build()
 				);
@@ -44,7 +44,7 @@ class GroupBuilder
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Свойства");
 		if ($value) {
-			foreach ($value->getElementsByTagName("Свойство") as $group) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "Свойство") as $group) {
 				$ret->addProperty(
 					(new PropertyBuilder($group))->build()
 				);

@@ -7,6 +7,7 @@ class CommerceInfo extends Model
 	protected $version;
 	protected $datetime;
 	protected $catalog;
+	protected $documents = [];
 	protected $classifier;
 	protected $offerPackage;
 
@@ -38,6 +39,16 @@ class CommerceInfo extends Model
 	public function getCatalog(): ?Catalog
 	{
 		return $this->catalog;
+	}
+
+	public function addDocument(Document $value)
+	{
+		$this->documents[] = $value;
+	}
+
+	public function getDocuments(): array
+	{
+		return $this->documents;
 	}
 
 	public function setClassifier(Classifier $value)

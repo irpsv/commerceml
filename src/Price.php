@@ -10,6 +10,7 @@ class Price extends Model
 	protected $valute;
 	protected $minCount;
 	protected $catalogId;
+	protected $unit;
 
 	public function setPerformance(string $value)
 	{
@@ -69,5 +70,15 @@ class Price extends Model
 	public function getCatalogId(): ?string
 	{
 		return $this->catalogId;
+	}
+
+	public function setUnit(Unit $value)
+	{
+		$this->unit = $value;
+	}
+
+	public function getUnit(): ?Unit
+	{
+		return $this->unit;
 	}
 }

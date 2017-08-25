@@ -43,6 +43,12 @@ class CommerceInfoBuilder
 			);
 		}
 
+		foreach ($element->getElementsByTagName("Документ") as $item) {
+			$ret->addDocument(
+				(new DocumentBuilder($item))->build()
+			);
+		}
+
 		$value = $element->getElementsByTagName("ПакетПредложений")->item(0);
 		if ($value) {
 			$ret->setOfferPackage(

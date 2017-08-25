@@ -6,6 +6,7 @@ class BaseScale extends Model
 {
 	protected $code;
 	protected $name;
+	protected $value;
 	protected $fullName;
 	protected $reduction; // международное сокращение
 	protected $reCalcs = []; // пересчет. Могут быть указаны способы пересчета в другие единицы. Указанные способы пересчета следует использовать в случаях несовпадения базовых единиц на одни и те же товары.
@@ -30,6 +31,16 @@ class BaseScale extends Model
 		return $this->name;
 	}
 
+	public function setValue(string $value)
+	{
+		$this->value = $value;
+	}
+
+	public function getValue(): ?string
+	{
+		return $this->value;
+	}
+
 	public function setFullName(string $value)
 	{
 		$this->fullName = $value;
@@ -50,13 +61,13 @@ class BaseScale extends Model
 		return $this->reduction;
 	}
 
-	public function addReCalc(Unit $value)
-	{
-		$this->reCalcs[] = $value;
-	}
-
-	public function getReCalcs(): array
-	{
-		return $this->reCalcs;
-	}
+	// public function addReCalc(Unit $value)
+	// {
+	// 	$this->reCalcs[] = $value;
+	// }
+	//
+	// public function getReCalcs(): array
+	// {
+	// 	return $this->reCalcs;
+	// }
 }

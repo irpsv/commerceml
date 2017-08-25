@@ -18,6 +18,10 @@ class CatalogBuilder
 	{
 		$ret = new Catalog();
 
+		$ret->setIsOnlyChanges(
+			$this->element->getAttribute("СодержитТолькоИзменения") == "true"
+		);
+
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Ид");
 		if ($value) {
 			$ret->setId($value->nodeValue);
@@ -47,7 +51,7 @@ class CatalogBuilder
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Товары");
 		if ($value) {
-			foreach ($value->getElementsByTagName("Товар") as $item) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "Товар") as $item) {
 				$ret->addProduct(
 					(new ProductBuilder($item))->build()
 				);

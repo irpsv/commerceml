@@ -11,6 +11,26 @@ class Unit extends Model
 	protected $coeff;
 	protected $additionalRequisites = []; // дополнительные данные
 
+	public function setName(string $value)
+	{
+		$this->name = $value;
+	}
+
+	public function getName(): ?string
+	{
+		return $this->name;
+	}
+
+	public function setCoeff(string $value)
+	{
+		$this->coeff = $value;
+	}
+
+	public function getCoeff(): ?string
+	{
+		return $this->coeff;
+	}
+
 	public function addAdditionalRequisite(RequisiteValue $value)
 	{
 		$this->additionalRequisites[] = $value;

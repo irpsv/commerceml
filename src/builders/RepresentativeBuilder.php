@@ -2,10 +2,10 @@
 
 namespace irpsv\commerceml\builders;
 
-use irpsv\commerceml\Contragent;
+use irpsv\commerceml\Representative;
 use irpsv\commerceml\helpers\DocumentHelper;
 
-class ContragentBuilder
+class RepresentativeBuilder
 {
 	protected $element;
 
@@ -14,9 +14,9 @@ class ContragentBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?Contragent
+	public function build(): ?Representative
 	{
-		$ret = new Contragent();
+		$ret = new Representative();
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Ид");
 		if ($value) {
@@ -41,25 +41,17 @@ class ContragentBuilder
 			}
 		}
 
+		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Отношение");
+		if ($value) {
+			$ret->setRelation($value->nodeValue);
+		}
+
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Контакты");
 		if ($value) {
 			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "Контакт") as $item) {
 				$contact = (new ContactBuilder($item))->build();
 				if ($contact) {
 					$ret->addContact($contact);
-				}
-			}
-		}
-
-		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Представители");
-		if ($value) {
-			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "Представитель") as $item) {
-				$x = DocumentHelper::findFirstLevelChildsByTagNameOne($item, "Контрагент");
-				if ($x) {
-					$x = (new RepresentativeBuilder($x))->build();
-					if ($x) {
-						$ret->addRepresentative($x);
-					}
 				}
 			}
 		}

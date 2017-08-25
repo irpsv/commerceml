@@ -42,7 +42,7 @@ class ClassifierBuilder
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Группы");
 		if ($value) {
-			foreach ($value->getElementsByTagName("Группа") as $item) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "Группа") as $item) {
 				$ret->addGroup(
 					(new GroupBuilder($item))->build()
 				);
@@ -51,7 +51,7 @@ class ClassifierBuilder
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Свойства");
 		if ($value) {
-			foreach ($value->getElementsByTagName("Свойство") as $item) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "Свойство") as $item) {
 				$ret->addProperty(
 					(new PropertyBuilder($item))->build()
 				);
@@ -60,7 +60,7 @@ class ClassifierBuilder
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "ТипыЦен");
 		if ($value) {
-			foreach ($value->getElementsByTagName("ТипЦены") as $item) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "ТипЦены") as $item) {
 				$ret->addPriceType(
 					(new PriceTypeBuilder($item))->build()
 				);

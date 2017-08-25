@@ -66,7 +66,7 @@ class OfferPackageBuilder
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "ТипыЦен");
 		if ($value) {
-			foreach ($value->getElementsByTagName("ТипЦены") as $item) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "ТипЦены") as $item) {
 				$ret->addPriceType(
 					(new PriceTypeBuilder($item))->build()
 				);
@@ -75,7 +75,7 @@ class OfferPackageBuilder
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Склады");
 		if ($value) {
-			foreach ($value->getElementsByTagName("Склад") as $item) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "Склад") as $item) {
 				$ret->addStore(
 					(new StoreBuilder($item))->build()
 				);
@@ -84,7 +84,7 @@ class OfferPackageBuilder
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "ЗначенияСвойств");
 		if ($value) {
-			foreach ($value->getElementsByTagName("ЗначенияСвойства") as $item) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "ЗначенияСвойства") as $item) {
 				$ret->addPropertyValue(
 					(new PropertyValueBuilder($item))->build()
 				);
@@ -93,7 +93,7 @@ class OfferPackageBuilder
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Предложения");
 		if ($value) {
-			foreach ($value->getElementsByTagName("Предложение") as $item) {
+			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "Предложение") as $item) {
 				$ret->addOffer(
 					(new OfferBuilder($item))->build()
 				);

@@ -2,40 +2,97 @@
 
 namespace irpsv\commerceml;
 
-class Offer extends Product
+class DocumentProduct extends Product
 {
-	protected $prices;
+	use DocumentTrait;
+
+	protected $catalogId;
+	protected $classifierId;
+	protected $pricePerOne;
 	protected $count;
-	protected $storeCounts = []; // остаткиПоСкладам
+	protected $amount;
+	protected $unit;
+	protected $country;
+	protected $gtd;
 
-	public function addPrice(Price $value)
+	public function setCatalogId(string $value)
 	{
-		$this->prices[] = $value;
+		$this->catalogId = $value;
 	}
 
-	public function getPrices(): array
+	public function getCatalogId(): ?string
 	{
-		return $this->prices;
+		return $this->catalogId;
 	}
 
-	public function setCount(int $value)
+	public function setClassifierId(string $value)
+	{
+		$this->classifierId = $value;
+	}
+
+	public function getClassifierId(): ?string
+	{
+		return $this->classifierId;
+	}
+
+	public function setPricePerOne(float $value)
+	{
+		$this->pricePerOne = $value;
+	}
+
+	public function getPricePerOne(): ?float
+	{
+		return $this->pricePerOne;
+	}
+
+	public function setCount(float $value)
 	{
 		$this->count = $value;
 	}
 
-	public function getCount(): ?int
+	public function getCount(): ?float
 	{
 		return $this->count;
 	}
 
-	public function addStoreCount(StoreCount $value)
+	public function setAmount(float $value)
 	{
-		$this->storeCounts[] = $value;
+		$this->amount = $value;
 	}
 
-	public function getStoreCounts(): array
+	public function getAmount(): ?float
 	{
-		return $this->storeCounts;
+		return $this->amount;
+	}
+
+	public function setUnit(Unit $value)
+	{
+		$this->unit = $value;
+	}
+
+	public function getUnit(): ?Unit
+	{
+		return $this->unit;
+	}
+
+	public function setCountry(string $value)
+	{
+		$this->country = $value;
+	}
+
+	public function getCountry(): ?string
+	{
+		return $this->country;
+	}
+
+	public function setGtd(string $value)
+	{
+		$this->gtd = $value;
+	}
+
+	public function getGtd(): ?string
+	{
+		return $this->gtd;
 	}
 
 	public static function createFrom(Product $product)
