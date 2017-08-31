@@ -28,15 +28,15 @@ class UnitBuilder
 			$ret->setCoeff($value->nodeValue);
 		}
 
-		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "ДополнительныеДанные");
-		if ($value) {
-			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "ЗначениеРеквизита") as $item) {
-				$requisite = (new RequisiteValueBuilder($item))->build();
-				if ($requisite) {
-					$ret->addAdditionalRequisite($requisite);
-				}
-			}
-		}
+		// $value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "ДополнительныеДанные");
+		// if ($value) {
+		// 	foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "ЗначениеРеквизита") as $item) {
+		// 		$requisite = (new RequisiteValueBuilder($item))->build();
+		// 		if ($requisite) {
+		// 			$ret->addAdditionalRequisite($requisite);
+		// 		}
+		// 	}
+		// }
 
 		if ($ret->isEmpty()) {
 			return null;

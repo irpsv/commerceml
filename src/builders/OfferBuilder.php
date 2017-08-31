@@ -34,12 +34,11 @@ class OfferBuilder
 			}
 		}
 
-		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Склад");
-		if ($value) {
-			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "ОстаткиПоСкладам") as $item) {
-				$ret->addStoreCount(
-					(new StoreCountBuilder($item))->build()
-				);
+		$value = DocumentHelper::findFirstLevelChildsByTagName($this->element, "Склад");
+		foreach ($value as $item) {
+			$item = (new StoreCountBuilder($item))->build();
+			if ($item) {
+				$ret->addStoreCount($item);
 			}
 		}
 
