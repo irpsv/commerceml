@@ -45,12 +45,12 @@ class RequisitiesIndividual extends Model
 		return $this->birthday;
 	}
 
-	public function setBirthplace(string $value)
+	public function setBirthplace(Address $value)
 	{
 		$this->birthplace = $value;
 	}
 
-	public function getBirthplace(): ?string
+	public function getBirthplace(): ?Address
 	{
 		return $this->birthplace;
 	}

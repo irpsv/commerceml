@@ -133,10 +133,11 @@ class ProductBuilder
 
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "ЗначенияРеквизитов");
 		if ($value) {
-			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "ЗначениеРеквизита") as $item) {
-				$x = (new RequisiteValueBuilder($item))->build();
-				if ($x) {
-					$ret->addRequisiteValue($x);
+			$items = DocumentHelper::findFirstLevelChildsByTagName($value, "ЗначениеРеквизита");
+			foreach ($items as $item) {
+				$item = (new RequisiteValueBuilder($item))->build();
+				if ($item) {
+					$ret->addRequisiteValue($item);
 				}
 			}
 		}
