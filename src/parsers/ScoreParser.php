@@ -19,13 +19,13 @@ class ScoreParser
 	{
 		$ret = $this->document->createElement("РасчетныйСчет");
 
-		$value = $this->model->getDocumentNumber();
+		$value = $this->model->getNumber();
 		if ($value) {
 			$node = $this->document->createElement("НомерСчета", $value);
 			$ret->appendChild($node);
 		}
 
-		$value = $this->model->getNumber();
+		$value = $this->model->getBank();
 		if ($value) {
 			$node = (new BankParser($value, $this->document))->parse();
 			if ($node) {
@@ -33,7 +33,7 @@ class ScoreParser
 			}
 		}
 
-		$value = $this->model->getNumber();
+		$value = $this->model->getBankCorrespondent();
 		if ($value) {
 			$node = (new BankParser($value, $this->document))->parse();
 			if ($node) {
@@ -42,7 +42,7 @@ class ScoreParser
 			}
 		}
 
-		$value = $this->model->getNumber();
+		$value = $this->model->getComment();
 		if ($value) {
 			$node = $this->document->createElement("Комментарий", $value);
 			$ret->appendChild($node);

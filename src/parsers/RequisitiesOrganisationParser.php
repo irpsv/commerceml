@@ -17,79 +17,82 @@ class RequisitiesOrganisationParser
 
 	public function parse(\DOMElement $ret): \DOMElement
 	{
-		$value = $this->model->getFullName();
+		$value = $this->model->getName();
 		if ($value) {
 			$node = $this->document->createElement("ОфициальноеНаименование", $value);
 			$ret->appendChild($node);
 		}
 
-		$value = $this->model->getFullName();
+		$value = $this->model->getAddress();
 		if ($value) {
-			$node = $this->document->createElement("ЮридическийАдрес", $value);
-			$ret->appendChild($node);
+			$node = (new AddressParser($value, $this->document))->parse();
+			if ($node) {
+				$node = $this->document->createElement("ЮридическийАдрес", $node->nodeValue);
+				$ret->appendChild($node);
+			}
 		}
 
-		$value = $this->model->getFullName();
+		$value = $this->model->getInn();
 		if ($value) {
 			$node = $this->document->createElement("ИНН", $value);
 			$ret->appendChild($node);
 		}
 
-		$value = $this->model->getFullName();
+		$value = $this->model->getKpp();
 		if ($value) {
 			$node = $this->document->createElement("КПП", $value);
 			$ret->appendChild($node);
 		}
 
-		$value = $this->model->getFullName();
+		$value = $this->model->getActivity();
 		if ($value) {
 			$node = $this->document->createElement("ОсновнойВидДеятельности", $value);
 			$ret->appendChild($node);
 		}
 
-		$value = $this->model->getFullName();
+		$value = $this->model->getEgrpo();
 		if ($value) {
 			$node = $this->document->createElement("ЕГРПО", $value);
 			$ret->appendChild($node);
 		}
 
-		$value = $this->model->getFullName();
+		$value = $this->model->getOkved();
 		if ($value) {
 			$node = $this->document->createElement("ОКВЭД", $value);
 			$ret->appendChild($node);
 		}
 
-		$value = $this->model->getFullName();
+		$value = $this->model->getOkdp();
 		if ($value) {
 			$node = $this->document->createElement("ОКДП", $value);
 			$ret->appendChild($node);
 		}
 
-		$value = $this->model->getFullName();
+		$value = $this->model->getOkopf();
 		if ($value) {
 			$node = $this->document->createElement("ОКОПФ", $value);
 			$ret->appendChild($node);
 		}
 
-		$value = $this->model->getFullName();
+		$value = $this->model->getOkfs();
 		if ($value) {
 			$node = $this->document->createElement("ОКФС", $value);
 			$ret->appendChild($node);
 		}
 
-		$value = $this->model->getFullName();
+		$value = $this->model->getOkpo();
 		if ($value) {
 			$node = $this->document->createElement("ОКПО", $value);
 			$ret->appendChild($node);
 		}
 
-		$value = $this->model->getFullName();
+		$value = $this->model->getDateRegister();
 		if ($value) {
-			$node = $this->document->createElement("ДатаРегистрации", $value);
+			$node = $this->document->createElement("ДатаРегистрации", $value->format('Y-m-d H:i:s'));
 			$ret->appendChild($node);
 		}
 
-		$value = $this->model->getFullName();
+		$value = $this->model->getHead();
 		if ($value) {
 			$node = (new OrganisationHeadParser($value, $this->document))->parse();
 			if ($node) {
@@ -97,7 +100,7 @@ class RequisitiesOrganisationParser
 			}
 		}
 
-		$value = $this->model->getFullName();
+		$value = $this->model->getScores();
 		if ($value) {
 			$node = $this->document->createElement("РасчетныеСчета");
 			foreach ($value as $item) {
