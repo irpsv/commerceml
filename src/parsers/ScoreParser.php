@@ -37,8 +37,16 @@ class ScoreParser
 		if ($value) {
 			$node = (new BankParser($value, $this->document))->parse();
 			if ($node) {
-				$node = $this->document->createElement("БанкКорреспондент", $node->nodeValue);
-				$ret->appendChild($node);
+				$childs = [];
+				foreach ($node->childNodes as $child) {
+					$childs[] = $child;
+				}
+
+				$node2 = $this->document->createElement("БанкКорреспондент");
+				foreach ($childs as $child) {
+					$node2->appendChild($child);
+				}
+				$ret->appendChild($node2);
 			}
 		}
 

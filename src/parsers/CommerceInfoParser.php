@@ -26,7 +26,7 @@ class CommerceInfoParser
 
 		$value = $this->model->getDatetime();
 		if ($value) {
-			$ret->setAttribute("ДатаФормирования", $value->format('Y-m-d H:i:s'));
+			$ret->setAttribute("ДатаФормирования", $value->format('Y-m-d\TH:i:s'));
 		}
 
 		$value = $this->model->getClassifier();

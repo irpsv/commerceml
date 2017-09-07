@@ -43,9 +43,9 @@ class BankParser
 		if ($value) {
 			$node = $this->document->createElement("Контакты");
 			foreach ($value as $item) {
-				$item = (new ContactParser($item, $this->document))->parse();
-				if ($item) {
-					$node->appendChild($item);
+				$nodeChild = (new ContactParser($item, $this->document))->parse();
+				if ($nodeChild) {
+					$node->appendChild($nodeChild);
 				}
 			}
 			$ret->appendChild($node);

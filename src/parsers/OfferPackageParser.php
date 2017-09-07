@@ -17,11 +17,12 @@ class OfferPackageParser
 
 	public function parse(): \DOMElement
 	{
-		$ret = $this->document->createElement("Классификатор");
+		$ret = $this->document->createElement("ПакетПредложений");
 
 		$value = $this->model->getIsOnlyChanges();
-		if ($value) {
-			$ret->setAttribute("СодержитТолькоИзменения", "true");
+		if (!is_null($value)) {
+			$value = $value ? "true" : "false";
+			$ret->setAttribute("СодержитТолькоИзменения", $value);
 		}
 
 		$value = $this->model->getId();
@@ -70,8 +71,16 @@ class OfferPackageParser
 		if ($value) {
 			$node = (new ContragentParser($value, $this->document))->parse();
 			if ($node) {
-				$node = $this->document->createElement("Владелец", $node->nodeValue);
-				$ret->appendChild($node);
+				$childs = [];
+				foreach ($node->childNodes as $child) {
+					$childs[] = $child;
+				}
+
+				$node2 = $this->document->createElement("Владелец");
+				foreach ($childs as $child) {
+					$node2->appendChild($child);
+				}
+				$ret->appendChild($node2);
 			}
 		}
 
@@ -79,9 +88,9 @@ class OfferPackageParser
 		if ($value) {
 			$node = $this->document->createElement("ТипыЦен");
 			foreach ($value as $item) {
-				$item = (new PriceTypeParser($item, $this->document))->parse();
-				if ($item) {
-					$node->appendChild($item);
+				$nodeChild = (new PriceTypeParser($item, $this->document))->parse();
+				if ($nodeChild) {
+					$node->appendChild($nodeChild);
 				}
 			}
 			$ret->appendChild($node);
@@ -91,9 +100,9 @@ class OfferPackageParser
 		if ($value) {
 			$node = $this->document->createElement("Склады");
 			foreach ($value as $item) {
-				$item = (new StoreParser($item, $this->document))->parse();
-				if ($item) {
-					$node->appendChild($item);
+				$nodeChild = (new StoreParser($item, $this->document))->parse();
+				if ($nodeChild) {
+					$node->appendChild($nodeChild);
 				}
 			}
 			$ret->appendChild($node);
@@ -103,9 +112,9 @@ class OfferPackageParser
 		if ($value) {
 			$node = $this->document->createElement("ЗначенияСвойств");
 			foreach ($value as $item) {
-				$item = (new PropertyValueParser($item, $this->document))->parse();
-				if ($item) {
-					$node->appendChild($item);
+				$nodeChild = (new PropertyValueParser($item, $this->document))->parse();
+				if ($nodeChild) {
+					$node->appendChild($nodeChild);
 				}
 			}
 			$ret->appendChild($node);
@@ -115,9 +124,9 @@ class OfferPackageParser
 		if ($value) {
 			$node = $this->document->createElement("Предложения");
 			foreach ($value as $item) {
-				$item = (new OfferParser($item, $this->document))->parse();
-				if ($item) {
-					$node->appendChild($item);
+				$nodeChild = (new OfferParser($item, $this->document))->parse();
+				if ($nodeChild) {
+					$node->appendChild($nodeChild);
 				}
 			}
 			$ret->appendChild($node);

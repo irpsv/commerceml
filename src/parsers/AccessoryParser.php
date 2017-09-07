@@ -17,7 +17,15 @@ class AccessoryParser
 
 	public function parse(): \DOMElement
 	{
-		$ret = (new ProductParser($this->model, $this->document))->parse();
+		$ret = $this->document->createElement('Комплектующее');
+		$product = (new ProductParser($this->model, $this->document))->parse();
+		$childs = [];
+		foreach ($product->childNodes as $child) {
+			$childs[] = $child;
+		}
+		foreach ($childs as $child) {
+			$ret->appendChild($child);
+		}
 
 		$value = $this->model->getCatalogId();
 		if ($value) {

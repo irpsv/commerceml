@@ -17,15 +17,23 @@ class OfferParser
 
 	public function parse(): \DOMElement
 	{
-		$ret = (new ProductParser($this->model, $this->document))->parse();
+		$ret = $this->document->createElement('Предложение');
+		$product = (new ProductParser($this->model, $this->document))->parse();
+		$childs = [];
+		foreach ($product->childNodes as $child) {
+			$childs[] = $child;
+		}
+		foreach ($childs as $child) {
+			$ret->appendChild($child);
+		}
 
 		$value = $this->model->getPrices();
 		if ($value) {
 			$node = $this->document->createElement("Цены");
 			foreach ($value as $item) {
-				$item = (new PriceParser($item, $this->document))->parse();
-				if ($item) {
-					$node->appendChild($item);
+				$nodeChild = (new PriceParser($item, $this->document))->parse();
+				if ($nodeChild) {
+					$node->appendChild($nodeChild);
 				}
 			}
 			$ret->appendChild($node);
@@ -39,14 +47,12 @@ class OfferParser
 
 		$value = $this->model->getStoreCounts();
 		if ($value) {
-			$node = $this->document->createElement("Склад");
 			foreach ($value as $item) {
-				$item = (new StoreCountParser($item, $this->document))->parse();
-				if ($item) {
-					$node->appendChild($item);
+				$node = (new StoreCountParser($item, $this->document))->parse();
+				if ($node) {
+					$ret->appendChild($node);
 				}
 			}
-			$ret->appendChild($node);
 		}
 
 		return $ret;

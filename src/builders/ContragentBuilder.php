@@ -54,12 +54,9 @@ class ContragentBuilder
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Представители");
 		if ($value) {
 			foreach (DocumentHelper::findFirstLevelChildsByTagName($value, "Представитель") as $item) {
-				$x = DocumentHelper::findFirstLevelChildsByTagNameOne($item, "Контрагент");
+				$x = (new RepresentativeBuilder($item))->build();
 				if ($x) {
-					$x = (new RepresentativeBuilder($x))->build();
-					if ($x) {
-						$ret->addRepresentative($x);
-					}
+					$ret->addRepresentative($x);
 				}
 			}
 		}

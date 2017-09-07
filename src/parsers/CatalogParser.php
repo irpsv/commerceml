@@ -20,8 +20,9 @@ class CatalogParser
 		$ret = $this->document->createElement("Каталог");
 
 		$value = $this->model->getIsOnlyChanges();
-		if ($value) {
-			$ret->setAttribute("СодержитТолькоИзменения", "true");
+		if (!is_null($value)) {
+			$value = $value ? "true" : "false";
+			$ret->setAttribute("СодержитТолькоИзменения", $value);
 		}
 
 		$value = $this->model->getId();
@@ -46,8 +47,16 @@ class CatalogParser
 		if ($value) {
 			$node = (new ContragentParser($value, $this->document))->parse();
 			if ($node) {
-				$node = $this->document->createElement("Владелец", $node->nodeValue);
-				$ret->appendChild($node);
+				$childs = [];
+				foreach ($node->childNodes as $child) {
+					$childs[] = $child;
+				}
+
+				$node2 = $this->document->createElement("Владелец");
+				foreach ($childs as $child) {
+					$node2->appendChild($child);
+				}
+				$ret->appendChild($node2);
 			}
 		}
 
@@ -55,9 +64,9 @@ class CatalogParser
 		if ($value) {
 			$node = $this->document->createElement("Товары");
 			foreach ($value as $item) {
-				$item = (new ProductParser($item, $this->document))->parse();
-				if ($item) {
-					$node->appendChild($item);
+				$nodeChild = (new ProductParser($item, $this->document))->parse();
+				if ($nodeChild) {
+					$node->appendChild($nodeChild);
 				}
 			}
 			$ret->appendChild($node);

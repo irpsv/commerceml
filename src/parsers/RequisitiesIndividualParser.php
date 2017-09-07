@@ -57,8 +57,16 @@ class RequisitiesIndividualParser
 		if ($value) {
 			$node = (new AddressParser($value, $this->document))->parse();
 			if ($node) {
-				$node = $this->document->createElement("МестоРождения", $node->nodeValue);
-				$ret->appendChild($node);
+				$childs = [];
+				foreach ($node->childNodes as $child) {
+					$childs[] = $child;
+				}
+
+				$node2 = $this->document->createElement("МестоРождения");
+				foreach ($childs as $child) {
+					$node2->appendChild($child);
+				}
+				$ret->appendChild($node2);
 			}
 		}
 
@@ -92,8 +100,16 @@ class RequisitiesIndividualParser
 		if ($value) {
 			$node = (new AddressParser($value, $this->document))->parse();
 			if ($node) {
-				$node = $this->document->createElement("АдресРегистрации", $node->nodeValue);
-				$ret->appendChild($node);
+				$childs = [];
+				foreach ($node->childNodes as $child) {
+					$childs[] = $child;
+				}
+
+				$node2 = $this->document->createElement("АдресРегистрации");
+				foreach ($childs as $child) {
+					$node2->appendChild($child);
+				}
+				$ret->appendChild($node2);
 			}
 		}
 

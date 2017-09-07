@@ -30,7 +30,7 @@ class OrdersXmlTest extends TestCase
 		$commerceInfo = (new CommerceInfoBuilder($dom))->build();
 
 		$this->assertEquals($commerceInfo->getVersion(), "2.03");
-		$this->assertEquals($commerceInfo->getDatetime()->format('Y-m-d\TH:i:s'), "2007-10-30T00:00:00");
+		$this->assertEquals($commerceInfo->getDatetime()->format('Y-m-d\TH:i:s'), "2007-10-30T18:13:34");
 		$this->assertEmpty($commerceInfo->getOfferPackage());
 		$this->assertNotNull($commerceInfo->getDocuments());
 		$this->assertEmpty($commerceInfo->getCatalog());
@@ -242,8 +242,14 @@ class OrdersXmlTest extends TestCase
      */
     public function testParser($commerceInfo)
     {
-        $dom = new \DOMDocument();
-		$node = (new CommerceInfoParser($commerceInfo, $dom))->parse();
-		$this->assertEquals($node->nodeValue, $this->getXmlDom()->textContent);
+		$dom = new \DOMDocument('1.0', 'utf-8');
+		$dom->preserveWhiteSpace = false;
+		$dom->formatOutput = true;
+		$dom->appendChild(
+			(new CommerceInfoParser($commerceInfo, $dom))->parse()
+		);
+		$dom2 = $this->getXmlDom();
+		$dom2->formatOutput = true;
+		$this->assertEquals($dom->saveXML($dom->firstChild), $dom2->saveXML($dom2->firstChild));
     }
 }

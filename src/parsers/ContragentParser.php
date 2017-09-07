@@ -35,10 +35,13 @@ class ContragentParser
 		if ($value) {
 			$node = (new RequisitiesIndividualParser($value, $this->document))->parse($ret);
 		}
+		else {
 
-		$value = $this->model->getRequisitiesOrganisation();
-		if ($value) {
-			$node = (new RequisitiesOrganisationParser($value, $this->document))->parse($ret);
+			$value = $this->model->getRequisitiesOrganisation();
+			if ($value) {
+				$node = (new RequisitiesOrganisationParser($value, $this->document))->parse($ret);
+			}
+
 		}
 
 		$value = $this->model->getComment();
@@ -59,9 +62,9 @@ class ContragentParser
 		if ($value) {
 			$node = $this->document->createElement("Контакты");
 			foreach ($value as $item) {
-				$item = (new ContactParser($item, $this->document))->parse();
-				if ($item) {
-					$node->appendChild($item);
+				$nodeChild = (new ContactParser($item, $this->document))->parse();
+				if ($nodeChild) {
+					$node->appendChild($nodeChild);
 				}
 			}
 			$ret->appendChild($node);
@@ -71,9 +74,9 @@ class ContragentParser
 		if ($value) {
 			$node = $this->document->createElement("Представители");
 			foreach ($value as $item) {
-				$item = (new RepresentativeParser($item, $this->document))->parse();
-				if ($item) {
-					$node->appendChild($item);
+				$nodeChild = (new RepresentativeParser($item, $this->document))->parse();
+				if ($nodeChild) {
+					$node->appendChild($nodeChild);
 				}
 			}
 			$ret->appendChild($node);

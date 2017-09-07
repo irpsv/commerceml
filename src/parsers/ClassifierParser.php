@@ -35,8 +35,16 @@ class ClassifierParser
 		if ($value) {
 			$node = (new ContragentParser($value, $this->document))->parse();
 			if ($node) {
-				$node = $this->document->createElement("Владелец", $node->nodeValue);
-				$ret->appendChild($node);
+				$childs = [];
+				foreach ($node->childNodes as $child) {
+					$childs[] = $child;
+				}
+
+				$node2 = $this->document->createElement("Владелец");
+				foreach ($childs as $child) {
+					$node2->appendChild($child);
+				}
+				$ret->appendChild($node2);
 			}
 		}
 
@@ -50,9 +58,9 @@ class ClassifierParser
 		if ($value) {
 			$node = $this->document->createElement("Группы");
 			foreach ($value as $item) {
-				$item = (new GroupParser($item, $this->document))->parse();
-				if ($item) {
-					$node->appendChild($item);
+				$nodeChild = (new GroupParser($item, $this->document))->parse();
+				if ($nodeChild) {
+					$node->appendChild($nodeChild);
 				}
 			}
 			$ret->appendChild($node);
@@ -62,9 +70,9 @@ class ClassifierParser
 		if ($value) {
 			$node = $this->document->createElement("Свойства");
 			foreach ($value as $item) {
-				$item = (new GroupParser($item, $this->document))->parse();
-				if ($item) {
-					$node->appendChild($item);
+				$nodeChild = (new GroupParser($item, $this->document))->parse();
+				if ($nodeChild) {
+					$node->appendChild($nodeChild);
 				}
 			}
 			$ret->appendChild($node);
@@ -74,9 +82,9 @@ class ClassifierParser
 		if ($value) {
 			$node = $this->document->createElement("ТипыЦен");
 			foreach ($value as $item) {
-				$item = (new PriceTypeParser($item, $this->document))->parse();
-				if ($item) {
-					$node->appendChild($item);
+				$nodeChild = (new PriceTypeParser($item, $this->document))->parse();
+				if ($nodeChild) {
+					$node->appendChild($nodeChild);
 				}
 			}
 			$ret->appendChild($node);

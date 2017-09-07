@@ -12,6 +12,7 @@ class DocumentTest extends TestCase
 	public function getXml()
 	{
 		return trim('
+		<?xml version="1.0" encoding="UTF-8"?>
 		<Документ>
 			<Ид>36</Ид>
 			<Номер>36</Номер>
@@ -40,14 +41,11 @@ class DocumentTest extends TestCase
 							<Значение>ггг</Значение>
 						</АдресноеПоле>
 					</АдресРегистрации>
-					<Контакты/>
 					<Представители>
 						<Представитель>
-							<Контрагент>
-								<Ид>b342955a9185c40132d4c1df6b30af2f</Ид>
-								<Наименование>admin</Наименование>
-								<Отношение>Контактное лицо</Отношение>
-							</Контрагент>
+							<Ид>b342955a9185c40132d4c1df6b30af2f</Ид>
+							<Наименование>admin</Наименование>
+							<Отношение>Контактное лицо</Отношение>
 						</Представитель>
 					</Представители>
 					<Роль>Покупатель</Роль>
@@ -63,7 +61,6 @@ class DocumentTest extends TestCase
 					<ИдСпособаОплаты>b342955a9185c40132d4c1df6b3012345</ИдСпособаОплаты>
 				</Оплата>
 			</Оплаты>
-			<Комментарий/>
 			<Товары>
 				<Товар>
 					<Ид>ORDER_DELIVERY</Ид>
@@ -222,8 +219,16 @@ class DocumentTest extends TestCase
 	 */
 	public function testParser($model)
 	{
-		$dom = new \DOMDocument();
-		$node = (new DocumentParser($model, $dom))->parse();
-		$this->assertEquals($node->nodeValue, $this->getDom()->nodeValue);
+		$dom = new \DOMDocument('1.0', 'utf-8');
+		$dom->preserveWhiteSpace = false;
+		$dom->formatOutput = true;
+		$dom->appendChild(
+			(new DocumentParser($model, $dom))->parse()
+		);
+		$dom2 = new \DOMDocument('1.0', 'utf-8');
+		$dom2->preserveWhiteSpace = false;
+		$dom2->formatOutput = true;
+		$dom2->loadXML($this->getXml());
+		$this->assertEquals($dom->saveXML($dom->firstChild), $dom2->saveXML($dom2->firstChild));
 	}
 }

@@ -73,9 +73,9 @@ class DocumentProductParser
 		if ($value) {
 			$node = $this->document->createElement("Налоги");
 			foreach ($value as $item) {
-				$item = (new TaxParser($item, $this->document))->parse();
-				if ($item) {
-					$node->appendChild($item);
+				$nodeChild = (new TaxParser($item, $this->document))->parse();
+				if ($nodeChild) {
+					$node->appendChild($nodeChild);
 				}
 			}
 			$ret->appendChild($node);
@@ -85,9 +85,9 @@ class DocumentProductParser
 		if ($value) {
 			$node = $this->document->createElement("Скидки");
 			foreach ($value as $item) {
-				$item = (new DiscountParser($item, $this->document))->parse();
-				if ($item) {
-					$node->appendChild($item);
+				$nodeChild = (new DiscountParser($item, $this->document))->parse();
+				if ($nodeChild) {
+					$node->appendChild($nodeChild);
 				}
 			}
 			$ret->appendChild($node);
@@ -97,9 +97,9 @@ class DocumentProductParser
 		if ($value) {
 			$node = $this->document->createElement("Склады");
 			foreach ($value as $item) {
-				$item = (new StoreParser($item, $this->document))->parse();
-				if ($item) {
-					$node->appendChild($item);
+				$nodeChild = (new StoreParser($item, $this->document))->parse();
+				if ($nodeChild) {
+					$node->appendChild($nodeChild);
 				}
 			}
 			$ret->appendChild($node);

@@ -41,9 +41,9 @@ class GroupParser
 		if ($value) {
 			$node = $this->document->createElement("Свойства");
 			foreach ($value as $item) {
-				$item = (new PropertyParser($item, $this->document))->parse();
-				if ($item) {
-					$node->appendChild($item);
+				$nodeChild = (new PropertyParser($item, $this->document))->parse();
+				if ($nodeChild) {
+					$node->appendChild($nodeChild);
 				}
 			}
 			$ret->appendChild($node);
@@ -53,9 +53,9 @@ class GroupParser
 		if ($value) {
 			$node = $this->document->createElement("Группы");
 			foreach ($value as $item) {
-				$item = (new GroupParser($item, $this->document))->parse();
-				if ($item) {
-					$node->appendChild($item);
+				$nodeChild = (new GroupParser($item, $this->document))->parse();
+				if ($nodeChild) {
+					$node->appendChild($nodeChild);
 				}
 			}
 			$ret->appendChild($node);

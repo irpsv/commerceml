@@ -12,6 +12,7 @@ class AddressTest extends TestCase
 	public function getXml()
 	{
 		return trim('
+		<?xml version="1.0" encoding="UTF-8"?>
 		<Адрес>
 			<Представление>117452, Москва г, Москва, Симферопольский б-р, дом № 78, корпус 1</Представление>
 			<Комментарий>Произвольный_комментарий</Комментарий>
@@ -71,8 +72,16 @@ class AddressTest extends TestCase
 	 */
 	public function testParser($model)
 	{
-		$dom = new \DOMDocument();
-		$node = (new AddressParser($model, $dom))->parse();
-		$this->assertEquals($node->nodeValue, $this->getDom()->nodeValue);
+		$dom = new \DOMDocument('1.0', 'utf-8');
+		$dom->preserveWhiteSpace = false;
+		$dom->formatOutput = true;
+		$dom->appendChild(
+			(new AddressParser($model, $dom))->parse()
+		);
+		$dom2 = new \DOMDocument('1.0', 'utf-8');
+		$dom2->preserveWhiteSpace = false;
+		$dom2->formatOutput = true;
+		$dom2->loadXML($this->getXml());
+		$this->assertEquals($dom->saveXML($dom->firstChild), $dom2->saveXML($dom2->firstChild));
 	}
 }

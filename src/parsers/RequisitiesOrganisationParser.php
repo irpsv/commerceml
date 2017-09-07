@@ -27,8 +27,16 @@ class RequisitiesOrganisationParser
 		if ($value) {
 			$node = (new AddressParser($value, $this->document))->parse();
 			if ($node) {
-				$node = $this->document->createElement("ЮридическийАдрес", $node->nodeValue);
-				$ret->appendChild($node);
+				$childs = [];
+				foreach ($node->childNodes as $child) {
+					$childs[] = $child;
+				}
+
+				$node2 = $this->document->createElement("ЮридическийАдрес");
+				foreach ($childs as $child) {
+					$node2->appendChild($child);
+				}
+				$ret->appendChild($node2);
 			}
 		}
 
@@ -104,11 +112,12 @@ class RequisitiesOrganisationParser
 		if ($value) {
 			$node = $this->document->createElement("РасчетныеСчета");
 			foreach ($value as $item) {
-				$node = (new ScoreParser($item, $this->document))->parse();
-				if ($node) {
-					$ret->appendChild($node);
+				$nodeChild = (new ScoreParser($item, $this->document))->parse();
+				if ($nodeChild) {
+					$node->appendChild($nodeChild);
 				}
 			}
+			$ret->appendChild($node);
 		}
 
 		return $ret;

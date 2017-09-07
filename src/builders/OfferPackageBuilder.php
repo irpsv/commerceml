@@ -18,6 +18,10 @@ class OfferPackageBuilder
 	{
 		$ret = new OfferPackage();
 
+		$ret->setIsOnlyChanges(
+			$this->element->getAttribute("СодержитТолькоИзменения") == "true"
+		);
+
 		$value = DocumentHelper::findFirstLevelChildsByTagNameOne($this->element, "Ид");
 		if ($value) {
 			$ret->setId($value->nodeValue);

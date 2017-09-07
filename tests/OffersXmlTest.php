@@ -18,7 +18,7 @@ class OneSeeOfficalTest extends TestCase
 {
 	public function getXmlDom()
 	{
-		$dom = new \DOMDocument;
+		$dom = new \DOMDocument('1.0', 'utf-8');
         $dom->preserveWhiteSpace = false;
 		$dom->loadXML(file_get_contents(__DIR__."/assets/off-doc-1c/offers.xml"));
 		return $dom;
@@ -232,8 +232,14 @@ class OneSeeOfficalTest extends TestCase
      */
     public function testParser($commerceInfo)
     {
-        $dom = new \DOMDocument();
-		$node = (new CommerceInfoParser($commerceInfo, $dom))->parse();
-		$this->assertEquals($node->nodeValue, $this->getXmlDom()->textContent);
+		$dom = new \DOMDocument('1.0', 'utf-8');
+		$dom->preserveWhiteSpace = false;
+		$dom->formatOutput = true;
+		$dom->appendChild(
+			(new CommerceInfoParser($commerceInfo, $dom))->parse()
+		);
+		$dom2 = $this->getXmlDom();
+		$dom2->formatOutput = true;
+		$this->assertEquals($dom->saveXML($dom->firstChild), $dom2->saveXML($dom2->firstChild));
     }
 }

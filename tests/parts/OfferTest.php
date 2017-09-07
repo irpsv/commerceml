@@ -12,6 +12,7 @@ class OfferTest extends TestCase
 	public function getXml()
 	{
 		return trim('
+		<?xml version="1.0" encoding="UTF-8"?>
 		<Предложение>
 			<Ид>05e26d70-01e4-11dc-a411-12355d80a2d1</Ид>
 			<Наименование>Стол обеденный</Наименование>
@@ -89,8 +90,16 @@ class OfferTest extends TestCase
 	 */
 	public function testParser($model)
 	{
-		$dom = new \DOMDocument();
-		$node = (new OfferParser($model, $dom))->parse();
-		$this->assertEquals($node->nodeValue, $this->getDom()->nodeValue);
+		$dom = new \DOMDocument('1.0', 'utf-8');
+		$dom->preserveWhiteSpace = false;
+		$dom->formatOutput = true;
+		$dom->appendChild(
+			(new OfferParser($model, $dom))->parse()
+		);
+		$dom2 = new \DOMDocument('1.0', 'utf-8');
+		$dom2->preserveWhiteSpace = false;
+		$dom2->formatOutput = true;
+		$dom2->loadXML($this->getXml());
+		$this->assertEquals($dom->saveXML($dom->firstChild), $dom2->saveXML($dom2->firstChild));
 	}
 }

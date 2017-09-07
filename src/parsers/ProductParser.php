@@ -51,13 +51,13 @@ class ProductParser
 
 		$value = $this->model->getGroupsIds();
 		if ($value) {
-			$wrapTag = $this->document->createElement("Группы");
+			$node = $this->document->createElement("Группы");
 			foreach ($value as $item) {
-				$wrapTag->appendChild(
+				$node->appendChild(
 					$this->document->createElement("Ид", $item)
 				);
 			}
-			$ret->appendChild($wrapTag);
+			$ret->appendChild($node);
 		}
 
 		$value = $this->model->getDesc();
