@@ -62,7 +62,7 @@ class DocumentProduct extends Product
 
 	public function getAmount(): ?float
 	{
-		return $this->amount;
+		return $this->getCount() * $this->getPricePerOne();
 	}
 
 	public function setUnit(Unit $value)
