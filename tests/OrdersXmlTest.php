@@ -244,6 +244,6 @@ class OrdersXmlTest extends TestCase
     {
         $dom = new \DOMDocument();
 		$node = (new CommerceInfoParser($commerceInfo, $dom))->parse();
-		$this->assertEquals($node->nodeValue, $this->getXmlDom()->nodeValue);
+		$this->assertEquals($node->nodeValue, $this->getXmlDom()->textContent);
     }
 }

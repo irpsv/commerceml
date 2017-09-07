@@ -32,7 +32,7 @@ class OfferParser
 		}
 
 		$value = $this->model->getCount();
-		if ($value) {
+		if (!is_null($value)) {
 			$node = $this->document->createElement("Количество", $value);
 			$ret->appendChild($node);
 		}
