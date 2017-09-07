@@ -4,7 +4,7 @@ namespace irpsv\commerceml;
 
 class Offer extends Product
 {
-	protected $prices;
+	protected $prices = [];
 	protected $count;
 	protected $storeCounts = []; // остаткиПоСкладам
 
