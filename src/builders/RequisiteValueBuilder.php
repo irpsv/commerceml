@@ -14,7 +14,7 @@ class RequisiteValueBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?RequisiteValue
+	public function build()
 	{
 		$ret = new RequisiteValue();
 

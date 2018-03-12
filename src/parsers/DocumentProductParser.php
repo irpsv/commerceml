@@ -15,7 +15,7 @@ class DocumentProductParser
 		$this->document = $document;
 	}
 
-	public function parse(): \DOMElement
+	public function parse()
 	{
 		$ret = (new ProductParser($this->model, $this->document))->parse();
 

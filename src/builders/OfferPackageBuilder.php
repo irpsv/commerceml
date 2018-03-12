@@ -14,7 +14,7 @@ class OfferPackageBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?OfferPackage
+	public function build()
 	{
 		$ret = new OfferPackage();
 

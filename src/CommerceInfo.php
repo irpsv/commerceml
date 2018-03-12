@@ -16,7 +16,7 @@ class CommerceInfo extends Model
 		$this->version = $value;
 	}
 
-	public function getVersion(): ?string
+	public function getVersion()
 	{
 		return $this->version;
 	}
@@ -26,7 +26,7 @@ class CommerceInfo extends Model
 		$this->datetime = $value;
 	}
 
-	public function getDatetime(): ?\DateTime
+	public function getDatetime()
 	{
 		return $this->datetime;
 	}
@@ -36,7 +36,7 @@ class CommerceInfo extends Model
 		$this->catalog = $value;
 	}
 
-	public function getCatalog(): ?Catalog
+	public function getCatalog()
 	{
 		return $this->catalog;
 	}
@@ -46,7 +46,7 @@ class CommerceInfo extends Model
 		$this->documents[] = $value;
 	}
 
-	public function getDocuments(): array
+	public function getDocuments()
 	{
 		return $this->documents;
 	}
@@ -56,7 +56,7 @@ class CommerceInfo extends Model
 		$this->classifier = $value;
 	}
 
-	public function getClassifier(): ?Classifier
+	public function getClassifier()
 	{
 		return $this->classifier;
 	}
@@ -66,7 +66,7 @@ class CommerceInfo extends Model
 		$this->offerPackage = $value;
 	}
 
-	public function getOfferPackage(): ?OfferPackage
+	public function getOfferPackage()
 	{
 		return $this->offerPackage;
 	}

@@ -14,7 +14,7 @@ class UnitBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?Unit
+	public function build()
 	{
 		$ret = new Unit();
 

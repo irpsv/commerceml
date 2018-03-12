@@ -14,7 +14,7 @@ class BankBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?Bank
+	public function build()
 	{
 		$ret = new Bank();
 

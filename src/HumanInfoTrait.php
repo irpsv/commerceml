@@ -15,7 +15,7 @@ trait HumanInfoTrait
 		$this->firstName = $value;
 	}
 
-	public function getFirstName(): ?string
+	public function getFirstName()
 	{
 		return $this->firstName;
 	}
@@ -25,7 +25,7 @@ trait HumanInfoTrait
 		$this->secondName = $value;
 	}
 
-	public function getSecondName(): ?string
+	public function getSecondName()
 	{
 		return $this->secondName;
 	}
@@ -35,7 +35,7 @@ trait HumanInfoTrait
 		$this->thirdName = $value;
 	}
 
-	public function getThirdName(): ?string
+	public function getThirdName()
 	{
 		return $this->thirdName;
 	}
@@ -45,7 +45,7 @@ trait HumanInfoTrait
 		$this->passport = $value;
 	}
 
-	public function getPassport(): ?Passport
+	public function getPassport()
 	{
 		return $this->passport;
 	}
@@ -55,7 +55,7 @@ trait HumanInfoTrait
 		$this->address = $value;
 	}
 
-	public function getAddress(): ?Address
+	public function getAddress()
 	{
 		return $this->address;
 	}

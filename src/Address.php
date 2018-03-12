@@ -13,7 +13,7 @@ class Address extends Model
 		$this->performance = $value;
 	}
 
-	public function getPerformance(): ?string
+	public function getPerformance()
 	{
 		return $this->performance;
 	}
@@ -23,7 +23,7 @@ class Address extends Model
 		$this->comment = $value;
 	}
 
-	public function getComment(): ?string
+	public function getComment()
 	{
 		return $this->comment;
 	}
@@ -33,7 +33,7 @@ class Address extends Model
 		$this->addressFields[] = $value;
 	}
 
-	public function getAddressFields(): array
+	public function getAddressFields()
 	{
 		return $this->addressFields;
 	}

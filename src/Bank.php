@@ -16,7 +16,7 @@ class Bank extends Model
 		$this->score = $value;
 	}
 
-	public function getScore(): ?string
+	public function getScore()
 	{
 		return $this->score;
 	}
@@ -26,7 +26,7 @@ class Bank extends Model
 		$this->Name = $value;
 	}
 
-	public function getName(): ?string
+	public function getName()
 	{
 		return $this->Name;
 	}
@@ -36,7 +36,7 @@ class Bank extends Model
 		$this->address = $value;
 	}
 
-	public function getAddress(): ?Address
+	public function getAddress()
 	{
 		return $this->address;
 	}
@@ -46,7 +46,7 @@ class Bank extends Model
 		$this->contacts[] = $value;
 	}
 
-	public function getContacts(): array
+	public function getContacts()
 	{
 		return $this->contacts;
 	}
@@ -57,7 +57,7 @@ class Bank extends Model
 		$this->swift = null;
 	}
 
-	public function getBik(): ?string
+	public function getBik()
 	{
 		return $this->bik;
 	}
@@ -68,7 +68,7 @@ class Bank extends Model
 		$this->swift = $value;
 	}
 
-	public function getSwift(): ?string
+	public function getSwift()
 	{
 		return $this->swift;
 	}

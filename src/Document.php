@@ -25,7 +25,7 @@ class Document extends Model
 		$this->id = $value;
 	}
 
-	public function getId(): ?string
+	public function getId()
 	{
 		return $this->id;
 	}
@@ -35,7 +35,7 @@ class Document extends Model
 		$this->number = $value;
 	}
 
-	public function getNumber(): ?string
+	public function getNumber()
 	{
 		return $this->number;
 	}
@@ -45,7 +45,7 @@ class Document extends Model
 		$this->datetime = $value;
 	}
 
-	public function getDatetime(): ?\DateTime
+	public function getDatetime()
 	{
 		return $this->datetime;
 	}
@@ -55,7 +55,7 @@ class Document extends Model
 		$this->operation = $value;
 	}
 
-	public function getOperation(): ?string
+	public function getOperation()
 	{
 		return $this->operation;
 	}
@@ -65,7 +65,7 @@ class Document extends Model
 		$this->role = $value;
 	}
 
-	public function getRole(): ?string
+	public function getRole()
 	{
 		return $this->role;
 	}
@@ -75,7 +75,7 @@ class Document extends Model
 		$this->valute = $value;
 	}
 
-	public function getValute(): ?Valute
+	public function getValute()
 	{
 		return $this->valute;
 	}
@@ -85,7 +85,7 @@ class Document extends Model
 		$this->course = $value;
 	}
 
-	public function getCourse(): ?float
+	public function getCourse()
 	{
 		return $this->course;
 	}
@@ -95,7 +95,7 @@ class Document extends Model
 		$this->amount = $value;
 	}
 
-	public function getAmount(): ?float
+	public function getAmount()
 	{
 		return $this->amount;
 	}
@@ -105,7 +105,7 @@ class Document extends Model
 		$this->contragents[] = $value;
 	}
 
-	public function getContragents(): array
+	public function getContragents()
 	{
 		return $this->contragents;
 	}
@@ -115,7 +115,7 @@ class Document extends Model
 		$this->payments[] = $value;
 	}
 
-	public function getPayments(): array
+	public function getPayments()
 	{
 		return $this->payments;
 	}
@@ -125,7 +125,7 @@ class Document extends Model
 		$this->paymentDate = $value;
 	}
 
-	public function getPaymentDate(): ?\DateTime
+	public function getPaymentDate()
 	{
 		return $this->paymentDate;
 	}
@@ -135,7 +135,7 @@ class Document extends Model
 		$this->comment = $value;
 	}
 
-	public function getComment(): ?string
+	public function getComment()
 	{
 		return $this->comment;
 	}
@@ -145,7 +145,7 @@ class Document extends Model
 		$this->products[] = $value;
 	}
 
-	public function getProducts(): array
+	public function getProducts()
 	{
 		return $this->products;
 	}

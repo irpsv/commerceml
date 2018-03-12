@@ -15,7 +15,7 @@ class Store extends Model
 		$this->id = $value;
 	}
 
-	public function getId(): ?string
+	public function getId()
 	{
 		return $this->id;
 	}
@@ -25,7 +25,7 @@ class Store extends Model
 		$this->name = $value;
 	}
 
-	public function getName(): ?string
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -35,7 +35,7 @@ class Store extends Model
 		$this->comment = $value;
 	}
 
-	public function getComment(): ?string
+	public function getComment()
 	{
 		return $this->comment;
 	}
@@ -45,7 +45,7 @@ class Store extends Model
 		$this->address = $value;
 	}
 
-	public function getAddress(): ?Address
+	public function getAddress()
 	{
 		return $this->address;
 	}
@@ -55,7 +55,7 @@ class Store extends Model
 		$this->contacts[] = $value;
 	}
 
-	public function getContacts(): array
+	public function getContacts()
 	{
 		return $this->contacts;
 	}

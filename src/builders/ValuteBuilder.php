@@ -14,7 +14,7 @@ class ValuteBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?Valute
+	public function build()
 	{
 		return new Valute(
 			$this->element->nodeValue

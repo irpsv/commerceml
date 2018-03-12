@@ -14,7 +14,7 @@ class AccessoryBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?Accessory
+	public function build()
 	{
 		$ret = Accessory::createFrom(
 			(new ProductBuilder($this->element))->build()

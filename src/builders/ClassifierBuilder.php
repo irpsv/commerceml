@@ -14,7 +14,7 @@ class ClassifierBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?Classifier
+	public function build()
 	{
 		$ret = new Classifier();
 

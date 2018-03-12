@@ -14,7 +14,7 @@ class StoreCountBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?StoreCount
+	public function build()
 	{
 		$ret = new StoreCount();
 

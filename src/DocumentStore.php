@@ -11,7 +11,7 @@ class DocumentStore extends Store
 		$this->count = $value;
 	}
 
-	public function getCount(): ?float
+	public function getCount()
 	{
 		return $this->count;
 	}

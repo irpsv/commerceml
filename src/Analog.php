@@ -12,7 +12,7 @@ class Analog extends Product
 		$this->catalogId = $value;
 	}
 
-	public function getCatalogId(): ?string
+	public function getCatalogId()
 	{
 		return $this->catalogId;
 	}
@@ -22,7 +22,7 @@ class Analog extends Product
 		$this->classifierId = $value;
 	}
 
-	public function getClassifierId(): ?string
+	public function getClassifierId()
 	{
 		return $this->classifierId;
 	}

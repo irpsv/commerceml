@@ -14,7 +14,7 @@ class CatalogBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?Catalog
+	public function build()
 	{
 		$ret = new Catalog();
 

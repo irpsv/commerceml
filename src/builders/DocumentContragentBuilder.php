@@ -14,7 +14,7 @@ class DocumentContragentBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?DocumentContragent
+	public function build()
 	{
 		$ret = DocumentContragent::createFrom(
 			(new ContragentBuilder($this->element))->build()

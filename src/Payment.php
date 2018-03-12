@@ -16,7 +16,7 @@ class Payment extends Model
 		$this->documentNumber = $value;
 	}
 
-	public function getDocumentNumber(): ?string
+	public function getDocumentNumber()
 	{
 		return $this->documentNumber;
 	}
@@ -26,7 +26,7 @@ class Payment extends Model
 		$this->transactionNumber = $value;
 	}
 
-	public function getTransactionNumber(): ?string
+	public function getTransactionNumber()
 	{
 		return $this->transactionNumber;
 	}
@@ -36,7 +36,7 @@ class Payment extends Model
 		$this->date = $value;
 	}
 
-	public function getDate(): ?\DateTime
+	public function getDate()
 	{
 		return $this->date;
 	}
@@ -46,7 +46,7 @@ class Payment extends Model
 		$this->amount = $value;
 	}
 
-	public function getAmount(): ?float
+	public function getAmount()
 	{
 		return $this->amount;
 	}
@@ -56,7 +56,7 @@ class Payment extends Model
 		$this->type = $value;
 	}
 
-	public function getType(): ?string
+	public function getType()
 	{
 		return $this->type;
 	}
@@ -66,7 +66,7 @@ class Payment extends Model
 		$this->typeId = $value;
 	}
 
-	public function getTypeId(): ?string
+	public function getTypeId()
 	{
 		return $this->typeId;
 	}

@@ -12,7 +12,7 @@ class PropertyDictionary extends Model
 		$this->valueId = $value;
 	}
 
-	public function getValueId(): ?string
+	public function getValueId()
 	{
 		return $this->valueId;
 	}
@@ -22,7 +22,7 @@ class PropertyDictionary extends Model
 		$this->value = $value;
 	}
 
-	public function getValue(): ?string
+	public function getValue()
 	{
 		return $this->value;
 	}

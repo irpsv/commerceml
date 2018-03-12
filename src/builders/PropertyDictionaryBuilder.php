@@ -14,7 +14,7 @@ class PropertyDictionaryBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?PropertyDictionary
+	public function build()
 	{
 		$ret = new PropertyDictionary();
 

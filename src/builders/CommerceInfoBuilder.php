@@ -14,7 +14,7 @@ class CommerceInfoBuilder
 		$this->document = $document;
 	}
 
-	public function build(): ?CommerceInfo
+	public function build()
 	{
 		$element = $this->document->getElementsByTagName('КоммерческаяИнформация')->item(0);
 		if (!$element) {

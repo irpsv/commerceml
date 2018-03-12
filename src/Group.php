@@ -15,7 +15,7 @@ class Group extends Model
 		$this->id = $value;
 	}
 
-	public function getId(): ?string
+	public function getId()
 	{
 		return $this->id;
 	}
@@ -25,7 +25,7 @@ class Group extends Model
 		$this->name = $value;
 	}
 
-	public function getName(): ?string
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -35,7 +35,7 @@ class Group extends Model
 		$this->desc = $value;
 	}
 
-	public function getDesc(): ?string
+	public function getDesc()
 	{
 		return $this->desc;
 	}
@@ -45,7 +45,7 @@ class Group extends Model
 		$this->properties[] = $value;
 	}
 
-	public function getProperties(): array
+	public function getProperties()
 	{
 		return $this->properties;
 	}
@@ -55,7 +55,7 @@ class Group extends Model
 		$this->groups[] = $value;
 	}
 
-	public function getGroups(): array
+	public function getGroups()
 	{
 		return $this->groups;
 	}

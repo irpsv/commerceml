@@ -13,7 +13,7 @@ class Accessory extends Product
 		$this->catalogId = $value;
 	}
 
-	public function getCatalogId(): ?string
+	public function getCatalogId()
 	{
 		return $this->catalogId;
 	}
@@ -23,7 +23,7 @@ class Accessory extends Product
 		$this->classifierId = $value;
 	}
 
-	public function getClassifierId(): ?string
+	public function getClassifierId()
 	{
 		return $this->classifierId;
 	}
@@ -33,7 +33,7 @@ class Accessory extends Product
 		$this->count = $value;
 	}
 
-	public function getCount(): ?int
+	public function getCount()
 	{
 		return $this->count;
 	}

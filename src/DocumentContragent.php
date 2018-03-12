@@ -13,7 +13,7 @@ class DocumentContragent extends Contragent
 		$this->role = $value;
 	}
 
-	public function getRole(): ?string
+	public function getRole()
 	{
 		return $this->role;
 	}
@@ -23,7 +23,7 @@ class DocumentContragent extends Contragent
 		$this->score = $value;
 	}
 
-	public function getScore(): ?Score
+	public function getScore()
 	{
 		return $this->score;
 	}
@@ -33,7 +33,7 @@ class DocumentContragent extends Contragent
 		$this->store = $value;
 	}
 
-	public function getStore(): ?Store
+	public function getStore()
 	{
 		return $this->store;
 	}

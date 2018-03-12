@@ -20,7 +20,7 @@ class RequisitiesIndividual extends Model
 		$this->FullName = $value;
 	}
 
-	public function getFullName(): ?string
+	public function getFullName()
 	{
 		return $this->FullName;
 	}
@@ -30,7 +30,7 @@ class RequisitiesIndividual extends Model
 		$this->appeal = $value;
 	}
 
-	public function getAppeal(): ?string
+	public function getAppeal()
 	{
 		return $this->appeal;
 	}
@@ -40,7 +40,7 @@ class RequisitiesIndividual extends Model
 		$this->birthday = $value;
 	}
 
-	public function getBirthday(): ?\DateTime
+	public function getBirthday()
 	{
 		return $this->birthday;
 	}
@@ -50,7 +50,7 @@ class RequisitiesIndividual extends Model
 		$this->birthplace = $value;
 	}
 
-	public function getBirthplace(): ?Address
+	public function getBirthplace()
 	{
 		return $this->birthplace;
 	}
@@ -60,7 +60,7 @@ class RequisitiesIndividual extends Model
 		$this->sex = $value;
 	}
 
-	public function getSex(): ?string
+	public function getSex()
 	{
 		return $this->sex;
 	}
@@ -70,7 +70,7 @@ class RequisitiesIndividual extends Model
 		$this->inn = $value;
 	}
 
-	public function getInn(): ?string
+	public function getInn()
 	{
 		return $this->inn;
 	}
@@ -80,7 +80,7 @@ class RequisitiesIndividual extends Model
 		$this->kpp = $value;
 	}
 
-	public function getKpp(): ?string
+	public function getKpp()
 	{
 		return $this->kpp;
 	}
@@ -90,7 +90,7 @@ class RequisitiesIndividual extends Model
 		$this->workPlace = $value;
 	}
 
-	public function getWorkPlace(): ?WorkPlace
+	public function getWorkPlace()
 	{
 		return $this->workPlace;
 	}

@@ -14,7 +14,7 @@ class OfferBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?Offer
+	public function build()
 	{
 		$ret = Offer::createFrom(
 			(new ProductBuilder($this->element))->build()

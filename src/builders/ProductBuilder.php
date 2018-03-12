@@ -15,7 +15,7 @@ class ProductBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?Product
+	public function build()
 	{
 		$ret = new Product();
 

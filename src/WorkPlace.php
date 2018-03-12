@@ -12,7 +12,7 @@ class WorkPlace extends Model
 		$this->organisation = $value;
 	}
 
-	public function getOrganisation(): ?RequisitiesOrganisation
+	public function getOrganisation()
 	{
 		return $this->organisation;
 	}
@@ -22,7 +22,7 @@ class WorkPlace extends Model
 		$this->post = $value;
 	}
 
-	public function getPost(): ?string
+	public function getPost()
 	{
 		return $this->post;
 	}

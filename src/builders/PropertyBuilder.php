@@ -14,7 +14,7 @@ class PropertyBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?Property
+	public function build()
 	{
 		$ret = new Property();
 

@@ -16,7 +16,7 @@ class BaseScale extends Model
 		$this->code = $value;
 	}
 
-	public function getCode(): ?string
+	public function getCode()
 	{
 		return $this->code;
 	}
@@ -26,7 +26,7 @@ class BaseScale extends Model
 		$this->name = $value;
 	}
 
-	public function getName(): ?string
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -36,7 +36,7 @@ class BaseScale extends Model
 		$this->value = $value;
 	}
 
-	public function getValue(): ?string
+	public function getValue()
 	{
 		return $this->value;
 	}
@@ -46,7 +46,7 @@ class BaseScale extends Model
 		$this->fullName = $value;
 	}
 
-	public function getFullName(): ?string
+	public function getFullName()
 	{
 		return $this->fullName;
 	}
@@ -56,7 +56,7 @@ class BaseScale extends Model
 		$this->reduction = $value;
 	}
 
-	public function getReduction(): ?string
+	public function getReduction()
 	{
 		return $this->reduction;
 	}
@@ -66,7 +66,7 @@ class BaseScale extends Model
 	// 	$this->reCalcs[] = $value;
 	// }
 	//
-	// public function getReCalcs(): array
+	// public function getReCalcs()
 	// {
 	// 	return $this->reCalcs;
 	// }

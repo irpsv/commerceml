@@ -23,7 +23,7 @@ class AddressField extends Model
 		$this->type = $value;
 	}
 
-	public function getType(): ?string
+	public function getType()
 	{
 		return $this->type;
 	}
@@ -33,7 +33,7 @@ class AddressField extends Model
 		$this->value = $value;
 	}
 
-	public function getValue(): ?string
+	public function getValue()
 	{
 		return $this->value;
 	}

@@ -13,7 +13,7 @@ class Excise extends Model
 		$this->name = $value;
 	}
 
-	public function getName(): ?string
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -23,7 +23,7 @@ class Excise extends Model
 		$this->amountPerOne = $value;
 	}
 
-	public function getAmountPerOne(): ?float
+	public function getAmountPerOne()
 	{
 		return $this->amountPerOne;
 	}
@@ -33,7 +33,7 @@ class Excise extends Model
 		$this->valute = $value;
 	}
 
-	public function getValute(): ?Valute
+	public function getValute()
 	{
 		return $this->valute;
 	}

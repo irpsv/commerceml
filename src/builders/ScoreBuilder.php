@@ -14,7 +14,7 @@ class ScoreBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?Score
+	public function build()
 	{
 		$ret = new Score();
 

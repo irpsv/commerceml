@@ -26,7 +26,7 @@ class OfferPackage extends Model
 		$this->id = $value;
 	}
 
-	public function getId(): ?string
+	public function getId()
 	{
 		return $this->id;
 	}
@@ -36,7 +36,7 @@ class OfferPackage extends Model
 		$this->name = $value;
 	}
 
-	public function getName(): ?string
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -46,7 +46,7 @@ class OfferPackage extends Model
 		$this->catalogId = $value;
 	}
 
-	public function getCatalogId(): ?string
+	public function getCatalogId()
 	{
 		return $this->catalogId;
 	}
@@ -56,7 +56,7 @@ class OfferPackage extends Model
 		$this->classifierId = $value;
 	}
 
-	public function getClassifierId(): ?string
+	public function getClassifierId()
 	{
 		return $this->classifierId;
 	}
@@ -66,7 +66,7 @@ class OfferPackage extends Model
 		$this->activeFrom = $value;
 	}
 
-	public function getActiveFrom(): ?\DateTime
+	public function getActiveFrom()
 	{
 		return $this->activeFrom;
 	}
@@ -76,7 +76,7 @@ class OfferPackage extends Model
 		$this->activeTo = $value;
 	}
 
-	public function getActiveTo(): ?\DateTime
+	public function getActiveTo()
 	{
 		return $this->activeTo;
 	}
@@ -86,7 +86,7 @@ class OfferPackage extends Model
 		$this->desc = $value;
 	}
 
-	public function getDesc(): ?string
+	public function getDesc()
 	{
 		return $this->desc;
 	}
@@ -96,7 +96,7 @@ class OfferPackage extends Model
 		$this->owner = $value;
 	}
 
-	public function getOwner(): ?Contragent
+	public function getOwner()
 	{
 		return $this->owner;
 	}
@@ -106,7 +106,7 @@ class OfferPackage extends Model
 		$this->priceTypes[] = $value;
 	}
 
-	public function getPriceTypes(): array
+	public function getPriceTypes()
 	{
 		return $this->priceTypes;
 	}
@@ -116,7 +116,7 @@ class OfferPackage extends Model
 		$this->stores[] = $value;
 	}
 
-	public function getStores(): array
+	public function getStores()
 	{
 		return $this->stores;
 	}
@@ -126,7 +126,7 @@ class OfferPackage extends Model
 		$this->propertyValues[] = $value;
 	}
 
-	public function getPropertyValues(): array
+	public function getPropertyValues()
 	{
 		return $this->propertyValues;
 	}
@@ -136,7 +136,7 @@ class OfferPackage extends Model
 		$this->offers[] = $value;
 	}
 
-	public function getOffers(): array
+	public function getOffers()
 	{
 		return $this->offers;
 	}
@@ -146,7 +146,7 @@ class OfferPackage extends Model
 		$this->isOnlyChanges = $value;
 	}
 
-	public function getIsOnlyChanges(): ?bool
+	public function getIsOnlyChanges()
 	{
 		return $this->isOnlyChanges;
 	}

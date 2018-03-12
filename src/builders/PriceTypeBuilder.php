@@ -14,7 +14,7 @@ class PriceTypeBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?PriceType
+	public function build()
 	{
 		$ret = new PriceType();
 

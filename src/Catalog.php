@@ -17,7 +17,7 @@ class Catalog extends Model
 		$this->id = $value;
 	}
 
-	public function getId(): ?string
+	public function getId()
 	{
 		return $this->id;
 	}
@@ -27,7 +27,7 @@ class Catalog extends Model
 		$this->classifierId = $value;
 	}
 
-	public function getClassifierId(): ?string
+	public function getClassifierId()
 	{
 		return $this->classifierId;
 	}
@@ -37,7 +37,7 @@ class Catalog extends Model
 		$this->name = $value;
 	}
 
-	public function getName(): ?string
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -47,7 +47,7 @@ class Catalog extends Model
 		$this->owner = $value;
 	}
 
-	public function getOwner(): ?Contragent
+	public function getOwner()
 	{
 		return $this->owner;
 	}
@@ -57,7 +57,7 @@ class Catalog extends Model
 		$this->products[] = $value;
 	}
 
-	public function getProducts(): array
+	public function getProducts()
 	{
 		return $this->products;
 	}
@@ -67,7 +67,7 @@ class Catalog extends Model
 		$this->desc = $value;
 	}
 
-	public function getDesc(): ?string
+	public function getDesc()
 	{
 		return $this->desc;
 	}
@@ -77,7 +77,7 @@ class Catalog extends Model
 		$this->isOnlyChanges = $value;
 	}
 
-	public function getIsOnlyChanges(): ?bool
+	public function getIsOnlyChanges()
 	{
 		return $this->isOnlyChanges;
 	}

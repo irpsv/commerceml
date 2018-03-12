@@ -14,7 +14,7 @@ class AddressBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?Address
+	public function build()
 	{
 		$ret = new Address();
 

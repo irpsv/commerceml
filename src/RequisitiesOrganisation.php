@@ -24,7 +24,7 @@ class RequisitiesOrganisation extends Model
 		$this->name = $value;
 	}
 
-	public function getName(): ?string
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -34,7 +34,7 @@ class RequisitiesOrganisation extends Model
 		$this->address = $value;
 	}
 
-	public function getAddress(): ?Address
+	public function getAddress()
 	{
 		return $this->address;
 	}
@@ -44,7 +44,7 @@ class RequisitiesOrganisation extends Model
 		$this->activity = $value;
 	}
 
-	public function getActivity(): ?string
+	public function getActivity()
 	{
 		return $this->activity;
 	}
@@ -54,7 +54,7 @@ class RequisitiesOrganisation extends Model
 		$this->inn = $value;
 	}
 
-	public function getInn(): ?string
+	public function getInn()
 	{
 		return $this->inn;
 	}
@@ -64,7 +64,7 @@ class RequisitiesOrganisation extends Model
 		$this->kpp = $value;
 	}
 
-	public function getKpp(): ?string
+	public function getKpp()
 	{
 		return $this->kpp;
 	}
@@ -74,7 +74,7 @@ class RequisitiesOrganisation extends Model
 		$this->egrpo = $value;
 	}
 
-	public function getEgrpo(): ?string
+	public function getEgrpo()
 	{
 		return $this->egrpo;
 	}
@@ -84,7 +84,7 @@ class RequisitiesOrganisation extends Model
 		$this->okved = $value;
 	}
 
-	public function getOkved(): ?string
+	public function getOkved()
 	{
 		return $this->okved;
 	}
@@ -94,7 +94,7 @@ class RequisitiesOrganisation extends Model
 		$this->okdp = $value;
 	}
 
-	public function getOkdp(): ?string
+	public function getOkdp()
 	{
 		return $this->okdp;
 	}
@@ -104,7 +104,7 @@ class RequisitiesOrganisation extends Model
 		$this->okopf = $value;
 	}
 
-	public function getOkopf(): ?string
+	public function getOkopf()
 	{
 		return $this->okopf;
 	}
@@ -114,7 +114,7 @@ class RequisitiesOrganisation extends Model
 		$this->okfs = $value;
 	}
 
-	public function getOkfs(): ?string
+	public function getOkfs()
 	{
 		return $this->okfs;
 	}
@@ -124,7 +124,7 @@ class RequisitiesOrganisation extends Model
 		$this->okpo = $value;
 	}
 
-	public function getOkpo(): ?string
+	public function getOkpo()
 	{
 		return $this->okpo;
 	}
@@ -134,7 +134,7 @@ class RequisitiesOrganisation extends Model
 		$this->dateRegister = $value;
 	}
 
-	public function getDateRegister(): ?\DateTime
+	public function getDateRegister()
 	{
 		return $this->dateRegister;
 	}
@@ -144,7 +144,7 @@ class RequisitiesOrganisation extends Model
 		$this->head = $value;
 	}
 
-	public function getHead(): ?OrganisationHead
+	public function getHead()
 	{
 		return $this->head;
 	}
@@ -154,7 +154,7 @@ class RequisitiesOrganisation extends Model
 		$this->scores[] = $value;
 	}
 
-	public function getScores(): array
+	public function getScores()
 	{
 		return $this->scores;
 	}

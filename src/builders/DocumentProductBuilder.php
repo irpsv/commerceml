@@ -14,7 +14,7 @@ class DocumentProductBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?DocumentProduct
+	public function build()
 	{
 		$ret = DocumentProduct::createFrom(
 			(new ProductBuilder($this->element))->build()

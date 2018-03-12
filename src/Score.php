@@ -14,7 +14,7 @@ class Score extends Model
 		$this->number = $value;
 	}
 
-	public function getNumber(): ?string
+	public function getNumber()
 	{
 		return $this->number;
 	}
@@ -24,7 +24,7 @@ class Score extends Model
 		$this->bank = $value;
 	}
 
-	public function getBank(): ?Bank
+	public function getBank()
 	{
 		return $this->bank;
 	}
@@ -34,7 +34,7 @@ class Score extends Model
 		$this->bankCorrespondent = $value;
 	}
 
-	public function getBankCorrespondent(): ?Bank
+	public function getBankCorrespondent()
 	{
 		return $this->bankCorrespondent;
 	}
@@ -44,7 +44,7 @@ class Score extends Model
 		$this->comment = $value;
 	}
 
-	public function getComment(): ?string
+	public function getComment()
 	{
 		return $this->comment;
 	}

@@ -22,7 +22,7 @@ class Classifier extends Model
 		$this->id = $value;
 	}
 
-	public function getId(): ?string
+	public function getId()
 	{
 		return $this->id;
 	}
@@ -32,7 +32,7 @@ class Classifier extends Model
 		$this->name = $value;
 	}
 
-	public function getName(): ?string
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -42,7 +42,7 @@ class Classifier extends Model
 		$this->desc = $value;
 	}
 
-	public function getDesc(): ?string
+	public function getDesc()
 	{
 		return $this->desc;
 	}
@@ -52,7 +52,7 @@ class Classifier extends Model
 		$this->Owner = $value;
 	}
 
-	public function getOwner(): Contragent
+	public function getOwner()
 	{
 		return $this->Owner;
 	}
@@ -62,7 +62,7 @@ class Classifier extends Model
 		$this->groups[] = $value;
 	}
 
-	public function getGroups(): array
+	public function getGroups()
 	{
 		return $this->groups;
 	}
@@ -72,7 +72,7 @@ class Classifier extends Model
 		$this->properties[] = $value;
 	}
 
-	public function getProperties(): array
+	public function getProperties()
 	{
 		return $this->properties;
 	}
@@ -82,7 +82,7 @@ class Classifier extends Model
 		$this->priceTypes[] = $value;
 	}
 
-	public function getPriceTypes(): array
+	public function getPriceTypes()
 	{
 		return $this->priceTypes;
 	}

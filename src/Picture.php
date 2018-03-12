@@ -14,7 +14,7 @@ class Picture
 		$this->fileName = $fileName;
 	}
 
-	public function getFileName(): ?string
+	public function getFileName()
 	{
 		return $this->fileName;
 	}

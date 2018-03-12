@@ -15,7 +15,7 @@ class RequisitiesIndividualParser
 		$this->document = $document;
 	}
 
-	public function parse(\DOMElement $ret): \DOMElement
+	public function parse(\DOMElement $ret)
 	{
 		$value = $this->model->getFullName();
 		if ($value) {

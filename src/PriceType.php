@@ -15,7 +15,7 @@ class PriceType extends Model
 		$this->id = $value;
 	}
 
-	public function getId(): ?string
+	public function getId()
 	{
 		return $this->id;
 	}
@@ -25,7 +25,7 @@ class PriceType extends Model
 		$this->name = $value;
 	}
 
-	public function getName(): ?string
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -35,7 +35,7 @@ class PriceType extends Model
 		$this->desc = $value;
 	}
 
-	public function getDesc(): ?string
+	public function getDesc()
 	{
 		return $this->desc;
 	}
@@ -45,7 +45,7 @@ class PriceType extends Model
 		$this->valute = $value;
 	}
 
-	public function getValute(): ?Valute
+	public function getValute()
 	{
 		return $this->valute;
 	}
@@ -55,7 +55,7 @@ class PriceType extends Model
 		$this->tax = $value;
 	}
 
-	public function getTax(): ?Tax
+	public function getTax()
 	{
 		return $this->tax;
 	}

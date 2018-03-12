@@ -15,7 +15,7 @@ class Valute
 		$this->code = $code;
 	}
 
-	public function getCode(): string
+	public function getCode()
 	{
 		return $this->code;
 	}

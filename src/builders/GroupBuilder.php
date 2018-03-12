@@ -14,7 +14,7 @@ class GroupBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?Group
+	public function build()
 	{
 		$ret = new Group();
 

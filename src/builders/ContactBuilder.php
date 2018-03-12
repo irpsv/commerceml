@@ -14,7 +14,7 @@ class ContactBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?Contact
+	public function build()
 	{
 		$ret = new Contact();
 

@@ -25,7 +25,7 @@ class Contact extends Model
 		$this->type = $value;
 	}
 
-	public function getType(): ?string
+	public function getType()
 	{
 		return $this->type;
 	}
@@ -35,7 +35,7 @@ class Contact extends Model
 		$this->value = $value;
 	}
 
-	public function getValue(): ?string
+	public function getValue()
 	{
 		return $this->value;
 	}
@@ -45,7 +45,7 @@ class Contact extends Model
 		$this->comment = $value;
 	}
 
-	public function getComment(): ?string
+	public function getComment()
 	{
 		return $this->comment;
 	}

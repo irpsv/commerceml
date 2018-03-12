@@ -15,7 +15,7 @@ class Discount extends Model
 		$this->name = $value;
 	}
 
-	public function getName(): ?string
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -25,7 +25,7 @@ class Discount extends Model
 		$this->amount = $value;
 	}
 
-	public function getAmount(): ?float
+	public function getAmount()
 	{
 		return $this->amount;
 	}
@@ -35,7 +35,7 @@ class Discount extends Model
 		$this->procent = $value;
 	}
 
-	public function getProcent(): ?float
+	public function getProcent()
 	{
 		return $this->procent;
 	}
@@ -45,7 +45,7 @@ class Discount extends Model
 		$this->isAccounted = $value;
 	}
 
-	public function getIsAccounted(): ?bool
+	public function getIsAccounted()
 	{
 		return $this->isAccounted;
 	}
@@ -55,7 +55,7 @@ class Discount extends Model
 		$this->comment = $value;
 	}
 
-	public function getComment(): ?string
+	public function getComment()
 	{
 		return $this->comment;
 	}

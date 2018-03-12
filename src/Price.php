@@ -17,7 +17,7 @@ class Price extends Model
 		$this->performance = $value;
 	}
 
-	public function getPerformance(): ?string
+	public function getPerformance()
 	{
 		return $this->performance;
 	}
@@ -27,7 +27,7 @@ class Price extends Model
 		$this->priceTypeId = $value;
 	}
 
-	public function getPriceTypeId(): ?string
+	public function getPriceTypeId()
 	{
 		return $this->priceTypeId;
 	}
@@ -37,7 +37,7 @@ class Price extends Model
 		$this->pricePerOne = $value;
 	}
 
-	public function getPricePerOne(): ?float
+	public function getPricePerOne()
 	{
 		return $this->pricePerOne;
 	}
@@ -47,7 +47,7 @@ class Price extends Model
 		$this->valute = $value;
 	}
 
-	public function getValute(): ?Valute
+	public function getValute()
 	{
 		return $this->valute;
 	}
@@ -57,7 +57,7 @@ class Price extends Model
 		$this->minCount = $value;
 	}
 
-	public function getMinCount(): ?int
+	public function getMinCount()
 	{
 		return $this->minCount;
 	}
@@ -67,7 +67,7 @@ class Price extends Model
 		$this->catalogId = $value;
 	}
 
-	public function getCatalogId(): ?string
+	public function getCatalogId()
 	{
 		return $this->catalogId;
 	}
@@ -77,7 +77,7 @@ class Price extends Model
 		$this->unit = $value;
 	}
 
-	public function getUnit(): ?Unit
+	public function getUnit()
 	{
 		return $this->unit;
 	}

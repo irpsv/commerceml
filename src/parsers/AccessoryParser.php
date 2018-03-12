@@ -15,7 +15,7 @@ class AccessoryParser
 		$this->document = $document;
 	}
 
-	public function parse(): \DOMElement
+	public function parse()
 	{
 		$ret = $this->document->createElement('Комплектующее');
 		$product = (new ProductParser($this->model, $this->document))->parse();

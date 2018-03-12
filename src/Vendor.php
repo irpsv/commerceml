@@ -14,7 +14,7 @@ class Vendor extends Model
 		$this->country = $value;
 	}
 
-	public function getCountry(): ?string
+	public function getCountry()
 	{
 		return $this->country;
 	}
@@ -24,7 +24,7 @@ class Vendor extends Model
 		$this->brandName = $value;
 	}
 
-	public function getBrandName(): ?string
+	public function getBrandName()
 	{
 		return $this->brandName;
 	}
@@ -34,7 +34,7 @@ class Vendor extends Model
 		$this->ownerBrand = $value;
 	}
 
-	public function getOwnerBrand(): ?Contragent
+	public function getOwnerBrand()
 	{
 		return $this->ownerBrand;
 	}
@@ -44,7 +44,7 @@ class Vendor extends Model
 		$this->manufacturerBrand = $value;
 	}
 
-	public function getManufacturerBrand(): ?Contragent
+	public function getManufacturerBrand()
 	{
 		return $this->manufacturerBrand;
 	}

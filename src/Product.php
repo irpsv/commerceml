@@ -27,7 +27,7 @@ class Product extends Model
 		$this->id = $value;
 	}
 
-	public function getId(): ?string
+	public function getId()
 	{
 		return $this->id;
 	}
@@ -37,7 +37,7 @@ class Product extends Model
 		$this->name = $value;
 	}
 
-	public function getName(): ?string
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -47,7 +47,7 @@ class Product extends Model
 		$this->desc = $value;
 	}
 
-	public function getDesc(): ?string
+	public function getDesc()
 	{
 		return $this->desc;
 	}
@@ -57,7 +57,7 @@ class Product extends Model
 		$this->barcode = $value;
 	}
 
-	public function getBarcode(): ?string
+	public function getBarcode()
 	{
 		return $this->barcode;
 	}
@@ -67,7 +67,7 @@ class Product extends Model
 		$this->articul = $value;
 	}
 
-	public function getArticul(): ?string
+	public function getArticul()
 	{
 		return $this->articul;
 	}
@@ -77,7 +77,7 @@ class Product extends Model
 		$this->baseScale = $value;
 	}
 
-	public function getBaseScale(): ?BaseScale
+	public function getBaseScale()
 	{
 		return $this->baseScale;
 	}
@@ -87,7 +87,7 @@ class Product extends Model
 		$this->contragentProductId = $value;
 	}
 
-	public function getContragentProductId(): ?string
+	public function getContragentProductId()
 	{
 		return $this->contragentProductId;
 	}
@@ -97,7 +97,7 @@ class Product extends Model
 		$this->groupsIds[] = $value;
 	}
 
-	public function getGroupsIds(): array
+	public function getGroupsIds()
 	{
 		return $this->groupsIds;
 	}
@@ -107,7 +107,7 @@ class Product extends Model
 		$this->pictures[] = $value;
 	}
 
-	public function getPictures(): array
+	public function getPictures()
 	{
 		return $this->pictures;
 	}
@@ -117,7 +117,7 @@ class Product extends Model
 		$this->vendor = $value;
 	}
 
-	public function getVendor(): ?Vendor
+	public function getVendor()
 	{
 		return $this->vendor;
 	}
@@ -127,7 +127,7 @@ class Product extends Model
 		$this->propertyValues[] = $value;
 	}
 
-	public function getPropertyValues(): array
+	public function getPropertyValues()
 	{
 		return $this->propertyValues;
 	}
@@ -137,7 +137,7 @@ class Product extends Model
 		$this->taxRates[] = $value;
 	}
 
-	public function getTaxRates(): array
+	public function getTaxRates()
 	{
 		return $this->taxRates;
 	}
@@ -147,7 +147,7 @@ class Product extends Model
 		$this->excises[] = $value;
 	}
 
-	public function getExcises(): array
+	public function getExcises()
 	{
 		return $this->excises;
 	}
@@ -157,7 +157,7 @@ class Product extends Model
 		$this->accessories[] = $value;
 	}
 
-	public function getAccessories(): array
+	public function getAccessories()
 	{
 		return $this->accessories;
 	}
@@ -167,7 +167,7 @@ class Product extends Model
 		$this->analogs[] = $value;
 	}
 
-	public function getAnalogs(): array
+	public function getAnalogs()
 	{
 		return $this->analogs;
 	}
@@ -177,7 +177,7 @@ class Product extends Model
 		$this->productChars[] = $value;
 	}
 
-	public function getProductChars(): array
+	public function getProductChars()
 	{
 		return $this->productChars;
 	}
@@ -187,7 +187,7 @@ class Product extends Model
 		$this->requisiteValues[] = $value;
 	}
 
-	public function getRequisiteValues(): array
+	public function getRequisiteValues()
 	{
 		return $this->requisiteValues;
 	}

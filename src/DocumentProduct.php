@@ -20,7 +20,7 @@ class DocumentProduct extends Product
 		$this->catalogId = $value;
 	}
 
-	public function getCatalogId(): ?string
+	public function getCatalogId()
 	{
 		return $this->catalogId;
 	}
@@ -30,7 +30,7 @@ class DocumentProduct extends Product
 		$this->classifierId = $value;
 	}
 
-	public function getClassifierId(): ?string
+	public function getClassifierId()
 	{
 		return $this->classifierId;
 	}
@@ -40,7 +40,7 @@ class DocumentProduct extends Product
 		$this->pricePerOne = $value;
 	}
 
-	public function getPricePerOne(): ?float
+	public function getPricePerOne()
 	{
 		return $this->pricePerOne;
 	}
@@ -50,7 +50,7 @@ class DocumentProduct extends Product
 		$this->count = $value;
 	}
 
-	public function getCount(): ?float
+	public function getCount()
 	{
 		return $this->count;
 	}
@@ -60,7 +60,7 @@ class DocumentProduct extends Product
 		$this->amount = $value;
 	}
 
-	public function getAmount(): ?float
+	public function getAmount()
 	{
 		return $this->getCount() * $this->getPricePerOne();
 	}
@@ -70,7 +70,7 @@ class DocumentProduct extends Product
 		$this->unit = $value;
 	}
 
-	public function getUnit(): ?Unit
+	public function getUnit()
 	{
 		return $this->unit;
 	}
@@ -80,7 +80,7 @@ class DocumentProduct extends Product
 		$this->country = $value;
 	}
 
-	public function getCountry(): ?string
+	public function getCountry()
 	{
 		return $this->country;
 	}
@@ -90,7 +90,7 @@ class DocumentProduct extends Product
 		$this->gtd = $value;
 	}
 
-	public function getGtd(): ?string
+	public function getGtd()
 	{
 		return $this->gtd;
 	}

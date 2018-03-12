@@ -14,7 +14,7 @@ class BaseScaleBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?BaseScale
+	public function build()
 	{
 		$ret = new BaseScale();
 

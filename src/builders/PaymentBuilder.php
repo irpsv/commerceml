@@ -14,7 +14,7 @@ class PaymentBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?Payment
+	public function build()
 	{
 		$ret = new Payment();
 

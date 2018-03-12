@@ -14,7 +14,7 @@ class TaxRateBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?TaxRate
+	public function build()
 	{
 		$ret = new TaxRate();
 

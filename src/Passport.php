@@ -15,7 +15,7 @@ class Passport extends Model
 		$this->type = $value;
 	}
 
-	public function getType(): ?string
+	public function getType()
 	{
 		return $this->type;
 	}
@@ -25,7 +25,7 @@ class Passport extends Model
 		$this->series = $value;
 	}
 
-	public function getSeries(): ?string
+	public function getSeries()
 	{
 		return $this->series;
 	}
@@ -35,7 +35,7 @@ class Passport extends Model
 		$this->number = $value;
 	}
 
-	public function getNumber(): ?string
+	public function getNumber()
 	{
 		return $this->number;
 	}
@@ -45,7 +45,7 @@ class Passport extends Model
 		$this->date = $value;
 	}
 
-	public function getDate(): ?\DateTime
+	public function getDate()
 	{
 		return $this->date;
 	}
@@ -55,7 +55,7 @@ class Passport extends Model
 		$this->who = $value;
 	}
 
-	public function getWho(): ?string
+	public function getWho()
 	{
 		return $this->who;
 	}

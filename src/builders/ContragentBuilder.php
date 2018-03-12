@@ -14,7 +14,7 @@ class ContragentBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?Contragent
+	public function build()
 	{
 		$ret = new Contragent();
 

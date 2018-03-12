@@ -12,7 +12,7 @@ class DocumentTax extends Tax
 		$this->amount = $value;
 	}
 
-	public function getAmount(): ?float
+	public function getAmount()
 	{
 		return $this->amount;
 	}
@@ -22,7 +22,7 @@ class DocumentTax extends Tax
 		$this->rate = $value;
 	}
 
-	public function getRate(): ?float
+	public function getRate()
 	{
 		return $this->rate;
 	}

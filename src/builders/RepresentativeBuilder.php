@@ -14,7 +14,7 @@ class RepresentativeBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?Representative
+	public function build()
 	{
 		$ret = new Representative();
 

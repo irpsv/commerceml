@@ -13,7 +13,7 @@ class ProductChar extends Model
 		$this->id = $value;
 	}
 
-	public function getId(): ?string
+	public function getId()
 	{
 		return $this->id;
 	}
@@ -23,7 +23,7 @@ class ProductChar extends Model
 		$this->name = $value;
 	}
 
-	public function getName(): ?string
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -33,7 +33,7 @@ class ProductChar extends Model
 		$this->value = $value;
 	}
 
-	public function getValue(): ?string
+	public function getValue()
 	{
 		return $this->value;
 	}

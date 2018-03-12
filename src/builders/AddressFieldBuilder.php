@@ -14,7 +14,7 @@ class AddressFieldBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?AddressField
+	public function build()
 	{
 		$ret = new AddressField();
 

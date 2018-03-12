@@ -16,7 +16,7 @@ class Unit extends Model
 		$this->name = $value;
 	}
 
-	public function getName(): ?string
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -26,7 +26,7 @@ class Unit extends Model
 		$this->coeff = $value;
 	}
 
-	public function getCoeff(): ?string
+	public function getCoeff()
 	{
 		return $this->coeff;
 	}
@@ -36,7 +36,7 @@ class Unit extends Model
 		$this->additionalRequisites[] = $value;
 	}
 
-	public function getAdditionalRequisites(): array
+	public function getAdditionalRequisites()
 	{
 		return $this->additionalRequisites;
 	}

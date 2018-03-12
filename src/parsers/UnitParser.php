@@ -15,7 +15,7 @@ class UnitParser
 		$this->document = $document;
 	}
 
-	public function parse(\DOMElement $ret): \DOMElement
+	public function parse(\DOMElement $ret)
 	{
 		$value = $this->model->getName();
 		if ($value) {

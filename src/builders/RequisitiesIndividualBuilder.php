@@ -14,7 +14,7 @@ class RequisitiesIndividualBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?RequisitiesIndividual
+	public function build()
 	{
 		$ret = new RequisitiesIndividual();
 

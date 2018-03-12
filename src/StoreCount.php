@@ -12,7 +12,7 @@ class StoreCount extends Model
 		$this->storeId = $value;
 	}
 
-	public function getStoreId(): ?string
+	public function getStoreId()
 	{
 		return $this->storeId;
 	}
@@ -22,7 +22,7 @@ class StoreCount extends Model
 		$this->count = $value;
 	}
 
-	public function getCount(): ?float
+	public function getCount()
 	{
 		return $this->count;
 	}

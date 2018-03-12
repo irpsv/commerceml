@@ -14,7 +14,7 @@ class ProductCharBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?ProductChar
+	public function build()
 	{
 		$ret = new ProductChar();
 

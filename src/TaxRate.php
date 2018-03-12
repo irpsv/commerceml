@@ -12,7 +12,7 @@ class TaxRate extends Model
 		$this->name = $value;
 	}
 
-	public function getName(): ?string
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -22,7 +22,7 @@ class TaxRate extends Model
 		$this->rate = $value;
 	}
 
-	public function getRate(): ?float
+	public function getRate()
 	{
 		return $this->rate;
 	}

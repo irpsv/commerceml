@@ -14,7 +14,7 @@ class RequisitiesOrganisationBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?RequisitiesOrganisation
+	public function build()
 	{
 		$ret = new RequisitiesOrganisation();
 

@@ -14,7 +14,7 @@ class OrganisationHead extends Model
 		$this->post = $value;
 	}
 
-	public function getPost(): ?string
+	public function getPost()
 	{
 		return $this->post;
 	}
@@ -24,7 +24,7 @@ class OrganisationHead extends Model
 		$this->contacts[] = $value;
 	}
 
-	public function getContacts(): array
+	public function getContacts()
 	{
 		return $this->contacts;
 	}

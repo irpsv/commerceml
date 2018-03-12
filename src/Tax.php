@@ -13,7 +13,7 @@ class Tax extends Model
 		$this->name = $value;
 	}
 
-	public function getName(): ?string
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -23,7 +23,7 @@ class Tax extends Model
 		$this->isAccounted = $value;
 	}
 
-	public function getIsAccounted(): ?bool
+	public function getIsAccounted()
 	{
 		return $this->isAccounted;
 	}
@@ -33,7 +33,7 @@ class Tax extends Model
 		$this->isExcise = $value;
 	}
 
-	public function getIsExcise(): ?bool
+	public function getIsExcise()
 	{
 		return $this->isExcise;
 	}

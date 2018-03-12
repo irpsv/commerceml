@@ -13,7 +13,7 @@ class Offer extends Product
 		$this->prices[] = $value;
 	}
 
-	public function getPrices(): array
+	public function getPrices()
 	{
 		return $this->prices;
 	}
@@ -23,7 +23,7 @@ class Offer extends Product
 		$this->count = $value;
 	}
 
-	public function getCount(): ?int
+	public function getCount()
 	{
 		return $this->count;
 	}
@@ -33,7 +33,7 @@ class Offer extends Product
 		$this->storeCounts[] = $value;
 	}
 
-	public function getStoreCounts(): array
+	public function getStoreCounts()
 	{
 		return $this->storeCounts;
 	}

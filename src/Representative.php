@@ -21,7 +21,7 @@ class Representative extends Model
 		$this->id = $value;
 	}
 
-	public function getId(): ?string
+	public function getId()
 	{
 		return $this->id;
 	}
@@ -31,7 +31,7 @@ class Representative extends Model
 		$this->name = $value;
 	}
 
-	public function getName(): ?string
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -42,7 +42,7 @@ class Representative extends Model
 		$this->requisitiesOrganisation = null;
 	}
 
-	public function getRequisitiesIndividual(): ?RequisitiesIndividual
+	public function getRequisitiesIndividual()
 	{
 		return $this->requisitiesIndividual;
 	}
@@ -53,7 +53,7 @@ class Representative extends Model
 		$this->requisitiesOrganisation = $value;
 	}
 
-	public function getRequisitiesOrganisation(): ?RequisitiesOrganisation
+	public function getRequisitiesOrganisation()
 	{
 		return $this->requisitiesOrganisation;
 	}
@@ -63,7 +63,7 @@ class Representative extends Model
 		$this->comment = $value;
 	}
 
-	public function getComment(): ?string
+	public function getComment()
 	{
 		return $this->comment;
 	}
@@ -73,7 +73,7 @@ class Representative extends Model
 		$this->address = $value;
 	}
 
-	public function getAddress(): ?Address
+	public function getAddress()
 	{
 		return $this->address;
 	}
@@ -83,7 +83,7 @@ class Representative extends Model
 		$this->contacts[] = $value;
 	}
 
-	public function getContacts(): array
+	public function getContacts()
 	{
 		return $this->contacts;
 	}
@@ -93,7 +93,7 @@ class Representative extends Model
 		$this->relation = $value;
 	}
 
-	public function getRelation(): ?string
+	public function getRelation()
 	{
 		return $this->relation;
 	}

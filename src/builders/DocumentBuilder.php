@@ -15,7 +15,7 @@ class DocumentBuilder
 		$this->element = $element;
 	}
 
-	public function build(): ?Document
+	public function build()
 	{
 		$ret = new Document();
 

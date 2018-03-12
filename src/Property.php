@@ -26,7 +26,7 @@ class Property extends Model
 		$this->id = $value;
 	}
 
-	public function getId(): ?string
+	public function getId()
 	{
 		return $this->id;
 	}
@@ -36,7 +36,7 @@ class Property extends Model
 		$this->name = $value;
 	}
 
-	public function getName(): ?string
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -46,7 +46,7 @@ class Property extends Model
 		$this->desc = $value;
 	}
 
-	public function getDesc(): ?string
+	public function getDesc()
 	{
 		return $this->desc;
 	}
@@ -56,7 +56,7 @@ class Property extends Model
 		$this->isRequired = $value;
 	}
 
-	public function getIsRequired(): ?bool
+	public function getIsRequired()
 	{
 		return $this->isRequired;
 	}
@@ -66,7 +66,7 @@ class Property extends Model
 		$this->isMany = $value;
 	}
 
-	public function getIsMany(): ?bool
+	public function getIsMany()
 	{
 		return $this->isMany;
 	}
@@ -76,7 +76,7 @@ class Property extends Model
 		$this->forProduct = $value;
 	}
 
-	public function getForProduct(): ?bool
+	public function getForProduct()
 	{
 		return $this->forProduct;
 	}
@@ -86,7 +86,7 @@ class Property extends Model
 		$this->forOffer = $value;
 	}
 
-	public function getForOffer(): ?bool
+	public function getForOffer()
 	{
 		return $this->forOffer;
 	}
@@ -96,7 +96,7 @@ class Property extends Model
 		$this->forDocument = $value;
 	}
 
-	public function getForDocument(): ?bool
+	public function getForDocument()
 	{
 		return $this->forDocument;
 	}
@@ -106,7 +106,7 @@ class Property extends Model
 		$this->valueType = $value;
 	}
 
-	public function getValueType(): ?string
+	public function getValueType()
 	{
 		return $this->valueType;
 	}
@@ -116,7 +116,7 @@ class Property extends Model
 		$this->values[] = $value;
 	}
 
-	public function getValues(): array
+	public function getValues()
 	{
 		return $this->values;
 	}
@@ -126,7 +126,7 @@ class Property extends Model
 		$this->dictionaries[] = $value;
 	}
 
-	public function getDictionaries(): array
+	public function getDictionaries()
 	{
 		return $this->dictionaries;
 	}

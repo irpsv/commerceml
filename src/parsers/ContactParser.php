@@ -15,7 +15,7 @@ class ContactParser
 		$this->document = $document;
 	}
 
-	public function parse(): \DOMElement
+	public function parse()
 	{
 		$ret = $this->document->createElement("Контакт");
 

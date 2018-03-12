@@ -14,7 +14,7 @@ trait DocumentTrait
 		$this->taxes[] = $value;
 	}
 
-	public function getTaxes(): array
+	public function getTaxes()
 	{
 		return $this->taxes;
 	}
@@ -24,7 +24,7 @@ trait DocumentTrait
 		$this->discounts[] = $value;
 	}
 
-	public function getDiscounts(): array
+	public function getDiscounts()
 	{
 		return $this->discounts;
 	}
@@ -34,7 +34,7 @@ trait DocumentTrait
 		$this->stores[] = $value;
 	}
 
-	public function getStores(): array
+	public function getStores()
 	{
 		return $this->stores;
 	}
@@ -44,7 +44,7 @@ trait DocumentTrait
 		$this->requisiteValues[] = $value;
 	}
 
-	public function getRequisiteValues(): array
+	public function getRequisiteValues()
 	{
 		return $this->requisiteValues;
 	}
